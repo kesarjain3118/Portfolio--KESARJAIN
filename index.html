@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kesar Jain - Portfolio</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <script src="https://cdn.jsdelivr.net/npm/lucide-icons/dist/lucide.min.js"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        inter: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        'dark-bg': '#0f172a', // slate-900
+                        'card-bg': '#1e293b', // slate-800
+                        'accent': '#06b6d4', // cyan-500
+                        'accent-light': '#22d3ee', // cyan-400
+                        'light-text': '#e2e8f0', // slate-200
+                        'muted-text': '#94a3b8', // slate-400
+                    }
+                }
+            }
+        }
+    </script>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body class="bg-dark-bg text-light-text font-inter">
+
+    <header class="fixed top-0 left-0 right-0 z-50 bg-dark-bg/80 backdrop-blur-md border-b border-card-bg/50">
+        <nav class="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 flex justify-between items-center h-20">
+            <div class="flex items-center gap-3">
+                <a href="#home" class="bg-accent text-white font-bold text-2xl w-10 h-10 flex items-center justify-center rounded-lg shadow-lg">K</a>
+                <span class="text-white font-bold text-xl hidden sm:block">KESAR JAIN</span>
+            </div>
+            
+            <div class="hidden md:flex gap-8">
+                <a href="#home" class="nav-link text-muted-text hover:text-white font-medium transition-colors duration-300" data-section="home">HOME</a>
+                <a href="#about" class="nav-link text-muted-text hover:text-white font-medium transition-colors duration-300" data-section="about">ABOUT</a>
+                <a href="#projects" class="nav-link text-muted-text hover:text-white font-medium transition-colors duration-300" data-section="projects">PROJECTS</a>
+                <a href="#contact" class="nav-link text-muted-text hover:text-white font-medium transition-colors duration-300" data-section="contact">CONTACT</a>
+            </div>
+            
+            <div class="flex items-center gap-4">
+                <a href="https://github.com/kesarjain3118" target="_blank" class="text-muted-text hover:text-white transition-colors duration-300" aria-label="GitHub">
+                    <i data-lucide="github" class="w-6 h-6"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/kesar-jain-576474289" target="_blank" class="text-muted-text hover:text-white transition-colors duration-300" aria-label="LinkedIn">
+                    <i data-lucide="linkedin" class="w-6 h-6"></i>
+                </a>
+                <a href="mailto:jainkesar477@gmail.com" class="text-muted-text hover:text-white transition-colors duration-300" aria-label="Email">
+                    <i data-lucide="mail" class="w-6 h-6"></i>
+                </a>
+                
+                <button id="mobileMenuBtn" class="md:hidden text-muted-text hover:text-white transition-colors duration-300 ml-4" aria-label="Toggle Menu">
+                    <i data-lucide="menu" class="w-6 h-6"></i>
+                </button>
+            </div>
+        </nav>
+        
+        <div id="mobileMenuPanel" class="fixed top-20 left-0 right-0 h-screen bg-dark-bg/95 backdrop-blur-sm z-40 p-4 transition-transform duration-300 transform translate-x-full md:hidden">
+            <div class="flex flex-col gap-4 text-center">
+                <a href="#home" class="mobile-nav-link text-2xl py-3 text-light-text hover:text-accent-light border-b border-card-bg transition-colors" data-section="home">HOME</a>
+                <a href="#about" class="mobile-nav-link text-2xl py-3 text-light-text hover:text-accent-light border-b border-card-bg transition-colors" data-section="about">ABOUT</a>
+                <a href="#projects" class="mobile-nav-link text-2xl py-3 text-light-text hover:text-accent-light border-b border-card-bg transition-colors" data-section="projects">PROJECTS</a>
+                <a href="#contact" class="mobile-nav-link text-2xl py-3 text-light-text hover:text-accent-light transition-colors" data-section="contact">CONTACT</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="pt-20">
+
+        <section id="home" class="min-h-screen flex items-center py-24">
+            <div class="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 grid md:grid-cols-2 gap-16 items-center">
+                
+                <div class="flex flex-col gap-6 animate-fade-in-up">
+                    <span class="bg-card-bg text-accent-light font-medium py-1 px-4 rounded-full self-start text-sm shadow-sm">B.TECH CSE STUDENT</span>
+                    <h1 class="text-5xl lg:text-7xl font-black text-white leading-tight">
+                        HEY! I'M <br> KESAR JAIN
+                    </h1>
+                    <h2 class="text-3xl lg:text-4xl font-bold text-accent-light">
+                        B.TECH CSE STUDENT
+                    </h2>
+                    <p class="text-muted-text text-lg max-w-lg">
+                        B.Tech CSE student at Woxsen University with skills in full-stack web development, AI applications, IoT, and simulations. Experienced in hackathons and team projects, eager to apply technical skills in internships.
+                    </p>
+                    <div class="flex flex-wrap gap-4 items-center">
+                        <a href="#contact" class="bg-accent hover:bg-cyan-600 text-white font-semibold py-3 px-6 rounded-lg transition-colors duration-300 shadow-lg">
+                            GET IN TOUCH
+                        </a>
+                        <div class="flex gap-4">
+                            <a href="https://github.com/kesarjain3118" target="_blank" class="bg-card-bg text-muted-text hover:text-white p-3 rounded-lg transition-colors duration-300 shadow-md" aria-label="GitHub">
+                                <i data-lucide="github" class="w-5 h-5"></i>
+                            </a>
+                            <a href="https://www.linkedin.com/in/kesar-jain-576474289" target="_blank" class="bg-card-bg text-muted-text hover:text-white p-3 rounded-lg transition-colors duration-300 shadow-md" aria-label="LinkedIn">
+                                <i data-lucide="linkedin" class="w-5 h-5"></i>
+                            </a>
+                            <a href="mailto:jainkesar477@gmail.com" class="bg-card-bg text-muted-text hover:text-white p-3 rounded-lg transition-colors duration-300 shadow-md" aria-label="Email">
+                                <i data-lucide="mail" class="w-5 h-5"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="flex justify-center items-center order-first md:order-last">
+                    <div class="relative w-[300px] h-[300px] lg:w-[400px] lg:h-[400px] rounded-full overflow-hidden border-4 border-accent-light hero-image-glow">
+                        <img src="images/kesar.jpg" alt="Kesar Jain" class="w-full h-full object-cover">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="py-24 bg-dark-bg">
+            <div class="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-8">
+                
+                <div class="bg-card-bg rounded-xl p-6 lg:p-8 shadow-lg flex flex-col gap-6">
+                    <h3 class="text-sm font-semibold text-muted-text tracking-widest uppercase">EDUCATION</h3>
+                    
+                    <div class="flex flex-col gap-2">
+                        <h4 class="text-2xl font-bold text-white">Woxsen University, Hyderabad</h4>
+                        <p class="text-lg text-muted-text">B.Tech in Computer Science Engineering</p>
+                        <p class="text-muted-text">(2023 – Present)</p>
+                        <div class="flex flex-wrap gap-x-8 gap-y-2 pt-2">
+                            <p class="text-light-text">CGPA: <span class="text-accent-light font-semibold">8.26/10</span></p>
+                            <p class="text-light-text">SGPA: <span class="text-accent-light font-semibold">9.14</span></p>
+                            <p class="text-light-text">Expected Graduation: <span class="text-accent-light font-semibold">2027</span></p>
+                        </div>
+                    </div>
+
+                    <hr class="border-slate-700">
+
+                    <div class="flex flex-col gap-2">
+                        <h4 class="text-2xl font-bold text-white">Sri Prakash Synergy School (CBSE)</h4>
+                        <p class="text-muted-text">(2019 – 2023)</p>
+                        <div class="flex flex-wrap gap-x-8 gap-y-2 pt-2">
+                            <p class="text-light-text">XII: <span class="text-accent-light font-semibold">71%</span></p>
+                            <p class="text-light-text">X: <span class="text-accent-light font-semibold">84%</span></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-card-bg rounded-xl p-6 lg:p-8 shadow-lg flex flex-col gap-6">
+                    <h3 class="text-sm font-semibold text-muted-text tracking-widest uppercase">TECHNICAL SKILLS</h3>
+                    
+                    <div class="flex flex-col gap-3">
+                        <h5 class="text-white font-semibold">Programming Languages</h5>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-slate-700 text-light-text py-1 px-3 rounded-full text-sm">C++</span>
+                            <span class="bg-slate-700 text-light-text py-1 px-3 rounded-full text-sm">Python</span>
+                            <span class="bg-slate-700 text-light-text py-1 px-3 rounded-full text-sm">Java</span>
+                            <span class="bg-slate-700 text-light-text py-1 px-3 rounded-full text-sm">JavaScript</span>
+                            <span class="bg-slate-700 text-light-text py-1 px-3 rounded-full text-sm">SQL</span>
+                            <span class="bg-slate-700 text-light-text py-1 px-3 rounded-full text-sm">HTML/CSS</span>
+                        </div>
+                    </div>
+
+                    <div class="flex flex-col gap-3">
+                        <h5 class="text-white font-semibold">Databases</h5>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-slate-700 text-light-text py-1 px-3 rounded-full text-sm">MongoDB</span>
+                            <span class="bg-slate-700 text-light-text py-1 px-3 rounded-full text-sm">NoSQL</span>
+                        </div>
+                    </div>
+
+                    <div class="flex flex-col gap-3">
+                        <h5 class="text-white font-semibold">Tools & Platforms</h5>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-slate-700 text-light-text py-1 px-3 rounded-full text-sm">Git</span>
+                            <span class="bg-slate-700 text-light-text py-1 px-3 rounded-full text-sm">GitHub</span>
+                            <span class="bg-slate-700 text-light-text py-1 px-3 rounded-full text-sm">VS Code</span>
+                            <span class="bg-slate-700 text-light-text py-1 px-3 rounded-full text-sm">NetLogo</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-card-bg rounded-xl p-6 lg-p-8 shadow-lg flex flex-col gap-4">
+                    <h3 class="text-sm font-semibold text-muted-text tracking-widest uppercase">HACKATHON EXPERIENCE</h3>
+                    <h4 class="text-xl font-bold text-white">Udgam Tech Fest 2024</h4>
+                    <p class="text-muted-text">
+                        Built an AI-powered text summarizer integrating NLP, emotion detection, translation, text-to-speech, and ASL accessibility features.
+                    </p>
+                    <div class="pt-2">
+                        <a href="https://huggingface.co/spaces/kesarj/ai-summarizer-with-asl" target="_blank" class="inline-flex items-center gap-2 bg-slate-700 text-accent-light py-2 px-4 rounded-lg text-sm font-medium hover:bg-slate-600 transition-colors">
+                            View Project (HuggingFace)
+                            <i data-lucide="external-link" class="w-4 h-4"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="bg-card-bg rounded-xl p-6 lg:p-8 shadow-lg flex flex-col gap-6">
+                    <h3 class="text-sm font-semibold text-muted-text tracking-widest uppercase">LANGUAGES</h3>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div>
+                            <h5 class="text-white font-semibold">English</h5>
+                            <p class="text-muted-text text-sm">Fluent</p>
+                        </div>
+                        <div>
+                            <h5 class="text-white font-semibold">Hindi</h5>
+                            <p class="text-muted-text text-sm">Fluent</p>
+                        </div>
+                        <div>
+                            <h5 class="text-white font-semibold">Telugu</h5>
+                            <p class="text-muted-text text-sm">Conversational</p>
+                        </div>
+                        <div>
+                            <h5 class="text-white font-semibold">Rajasthani</h5>
+                            <p class="text-muted-text text-sm">Native</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="py-24">
+            <div class="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+                <h2 class="text-4xl font-bold text-white text-center">PROJECTS</h2>
+                <p class="text-lg text-muted-text text-center mt-4 mb-12 max-w-3xl mx-auto">
+                    A selection of my work in web development, AI, simulation, and IoT.
+                </p>
+
+                <h3 class="text-2xl font-semibold text-accent-light mb-8 text-center md:text-left">Core Projects</h3>
+                <div class="grid md:grid-cols-2 lg:grid-cols-2 gap-8 mb-16">
+                    
+                    <div class="project-card bg-card-bg rounded-xl overflow-hidden flex flex-col shadow-lg transition-transform duration-300 hover:-translate-y-1"
+                         data-title="Road Safety – E-Speed Breaker System"
+                         data-desc="Implemented V2V communication with IoT sensors for accident prevention and smart traffic monitoring. Developed the core sensing and communication logic."
+                         data-tags='["IoT", "V2V", "Sensors", "Hardware"]'
+                         data-image="images/image.png" 
+                         data-github="#"
+                         data-website="https://www.linkedin.com/posts/kesar-jain-576474289_mentorship-collaboration-teamwork-activity-7197261003800076289-z8IT"
+                         data-pdf="#">
+                        
+                        <div class="relative h-56">
+                            <img src="images/image.png"  alt="Road Safety – E-Speed Breaker System" class="w-full h-full object-cover">
+                            <span class="absolute top-4 left-4 bg-black/60 text-white text-xs py-1 px-3 rounded-full backdrop-blur-sm">IoT / Hardware</span>
+                        </div>
+                        <div class="p-6 flex flex-col gap-4 flex-grow">
+                            <h4 class="text-xl font-bold text-white">Road Safety – E-Speed Breaker System</h4>
+                            <p class="text-muted-text text-sm flex-grow">Implemented V2V communication with IoT sensors for accident prevention and smart traffic monitoring.</p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="bg-slate-700 text-light-text py-1 px-3 rounded-full text-xs">IoT</span>
+                                <span class="bg-slate-700 text-light-text py-1 px-3 rounded-full text-xs">V2V</span>
+                                <span class="bg-slate-700 text-light-text py-1 px-3 rounded-full text-xs">Sensors</span>
+                            </div>
+                            <div class="pt-4 mt-auto">
+                                <button class="open-modal-btn inline-flex items-center gap-2 bg-slate-700 text-accent-light py-2 px-4 rounded-lg text-sm font-medium hover:bg-slate-600 transition-colors">
+                                    View Details
+                                    <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-card bg-card-bg rounded-xl overflow-hidden flex flex-col shadow-lg transition-transform duration-300 hover:-translate-y-1"
+                         data-title="Unitext – AI Accessibility Tool"
+                         data-desc="An AI-powered text summarizer from a hackathon, integrating NLP, emotion detection, translation, text-to-speech, and ASL accessibility features. Developed the NLP and front-end integration."
+                         data-tags='["AI", "NLP", "Accessibility", "Hackathon"]'
+                         data-image="images/unitext.png"
+                         data-github="https://github.com/kesarjain3118/Unitext"
+                         data-website="#"
+                         data-pdf="#">
+
+                        <div class="relative h-56">
+                            <img src="images/unitext.png" alt="Unitext AI Accessibility Tool" class="w-full h-full object-cover">
+                            <span class="absolute top-4 left-4 bg-black/60 text-white text-xs py-1 px-3 rounded-full backdrop-blur-sm">AI / Accessibility</span>
+                        </div>
+                        <div class="p-6 flex flex-col gap-4 flex-grow">
+                            <h4 class="text-xl font-bold text-white">Unitext – AI Accessibility Tool</h4>
+                            <p class="text-muted-text text-sm flex-grow">An AI-powered text summarizer from a hackathon, integrating NLP, emotion detection, translation, text-to-speech, and ASL accessibility features.</p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="bg-slate-700 text-light-text py-1 px-3 rounded-full text-xs">AI</span>
+                                <span class="bg-slate-700 text-light-text py-1 px-3 rounded-full text-xs">NLP</span>
+                            </div>
+                            <div class="pt-4 mt-auto">
+                                <button class="open-modal-btn inline-flex items-center gap-2 bg-slate-700 text-accent-light py-2 px-4 rounded-lg text-sm font-medium hover:bg-slate-600 transition-colors">
+                                    View Details
+                                    <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="project-card bg-card-bg rounded-xl overflow-hidden flex flex-col shadow-lg transition-transform duration-300 hover:-translate-y-1"
+                         data-title="GreenClean – AI Smart Canteen Management System"
+                         data-desc="An AI-driven system to manage canteen operations, reduce food waste, and optimize inventory. Used Python for backend logic and data analysis."
+                         data-tags='["AI", "Management", "Python", "Data Analysis"]'
+                         data-image="images/green.png"
+                         data-github="#"
+                         data-website="#"
+                         data-pdf="#">
+                        
+                        <div class="relative h-56">
+                            <img src="images/green.png" class="w-full h-full object-cover">
+                            <span class="absolute top-4 left-4 bg-black/60 text-white text-xs py-1 px-3 rounded-full backdrop-blur-sm">AI / Management</span>
+                        </div>
+                        <div class="p-6 flex flex-col gap-4 flex-grow">
+                            <h4 class="text-xl font-bold text-white">GreenClean – AI Smart Canteen Management</h4>
+                            <p class="text-muted-text text-sm flex-grow">An AI-driven system to manage canteen operations, reduce food waste, and optimize inventory.</p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="bg-slate-700 text-light-text py-1 px-3 rounded-full text-xs">AI</span>
+                                <span class="bg-slate-700 text-light-text py-1 px-3 rounded-full text-xs">Python</span>
+                            </div>
+                            <div class="pt-4 mt-auto">
+                                <button class="open-modal-btn inline-flex items-center gap-2 bg-slate-700 text-accent-light py-2 px-4 rounded-lg text-sm font-medium hover:bg-slate-600 transition-colors">
+                                    View Details
+                                    <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-card bg-card-bg rounded-xl overflow-hidden flex flex-col shadow-lg transition-transform duration-300 hover:-translate-y-1"
+                         data-title="Universal Turing Machine Simulator"
+                         data-desc="A software simulator for a Universal Turing Machine, demonstrating computational theory concepts. Developed the state transition logic in Java."
+                         data-tags='["Java", "Theory", "Simulator", "Turing Machine"]'
+                         data-image="images/utm.png"
+                         data-github="#"
+                         data-website="#"
+                         data-pdf="#">
+
+                        <div class="relative h-56">
+                            <img src="images/utm.png" alt="Universal Turing Machine Simulator" class="w-full h-full object-cover">
+                            <span class="absolute top-4 left-4 bg-black/60 text-white text-xs py-1 px-3 rounded-full backdrop-blur-sm">Software / Simulation</span>
+                        </div>
+                        <div class="p-6 flex flex-col gap-4 flex-grow">
+                            <h4 class="text-xl font-bold text-white">Universal Turing Machine Simulator</h4>
+                            <p class="text-muted-text text-sm flex-grow">A software simulator for a Universal Turing Machine, demonstrating computational theory concepts.</p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="bg-slate-700 text-light-text py-1 px-3 rounded-full text-xs">Java</span>
+                                <span class="bg-slate-700 text-light-text py-1 px-3 rounded-full text-xs">Simulator</span>
+                            </div>
+                            <div class="pt-4 mt-auto">
+                                <button class="open-modal-btn inline-flex items-center gap-2 bg-slate-700 text-accent-light py-2 px-4 rounded-lg text-sm font-medium hover:bg-slate-600 transition-colors">
+                                    View Details
+                                    <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-card bg-card-bg rounded-xl overflow-hidden flex flex-col shadow-lg transition-transform duration-300 hover:-translate-y-1"
+                         data-title="Jewelry Design E-commerce Website"
+                         data-desc="Developed a full-stack platform with secure backend, responsive UI, and real-time jewelry preview. (HTML, Tailwind CSS, JavaScript, Node.js, MongoDB)"
+                         data-tags='["Full-Stack", "E-commerce", "Node.js", "MongoDB", "Tailwind CSS"]'
+                         data-image="images/web.png"
+                         data-github="https://github.com/kesarjain3118/jairajendrajewellers"
+                         data-website="#"
+                         data-pdf="#">
+                        
+                        <div class="relative h-56">
+                            <img src="images/web.png" alt="Jewelry Design E-commerce Website" class="w-full h-full object-cover">
+                            <span class="absolute top-4 left-4 bg-black/60 text-white text-xs py-1 px-3 rounded-full backdrop-blur-sm">Full-Stack / Web App</span>
+                        </div>
+                        <div class="p-6 flex flex-col gap-4 flex-grow">
+                            <h4 class="text-xl font-bold text-white">Jewelry Design E-commerce Website</h4>
+                            <p class="text-muted-text text-sm flex-grow">Developed a full-stack platform with secure backend, responsive UI, and real-time jewelry preview.</p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="bg-slate-700 text-light-text py-1 px-3 rounded-full text-xs">HTML</span>
+                                <span class="bg-slate-700 text-light-text py-1 px-3 rounded-full text-xs">Node.js</span>
+                                <span class="bg-slate-700 text-light-text py-1 px-3 rounded-full text-xs">Tailwind Css</span>
+                            </div>
+                            <div class="pt-4 mt-auto">
+                                <button class="open-modal-btn inline-flex items-center gap-2 bg-slate-700 text-accent-light py-2 px-4 rounded-lg text-sm font-medium hover:bg-slate-600 transition-colors">
+                                    View Details
+                                    <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-card bg-card-bg rounded-xl overflow-hidden flex flex-col shadow-lg transition-transform duration-300 hover:-translate-y-1"
+                         data-title="Multi-Agent Simulation System"
+                         data-desc="Built CSP algorithm-based simulation for traffic flow and drone-based medical delivery optimization using the MESA framework."
+                         data-tags='["AI", "Simulation", "CSP", "NetLogo", "Optimization", "Python"]'
+                         data-image="images/meta.png"
+                         data-github="https://github.com/kesarjain3118/Multi-Agents-System-using-MESA-Framework"
+                         data-website="https://github.com/kesarjain3118/Multi-Agents-System-using-MESA-Framework"
+                         data-pdf="#">
+
+                        <div class="relative h-56">
+                            <img src="images/meta.png" alt="Multi-Agent Simulation System" class="w-full h-full object-cover">
+                            <span class="absolute top-4 left-4 bg-black/60 text-white text-xs py-1 px-3 rounded-full backdrop-blur-sm">AI / Simulation</span>
+                        </div>
+                        <div class="p-6 flex flex-col gap-4 flex-grow">
+                            <h4 class="text-xl font-bold text-white">Multi-Agent Simulation System</h4>
+                            <p class="text-muted-text text-sm flex-grow">Built CSP algorithm-based simulation for traffic flow and drone-based medical delivery optimization.</p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="bg-slate-700 text-light-text py-1 px-3 rounded-full text-xs">AI</span>
+                                <span class="bg-slate-700 text-light-text py-1 px-3 rounded-full text-xs">Simulation</span>
+                                <span class="bg-slate-700 text-light-text py-1 px-3 rounded-full text-xs">NetLogo</span>
+                            </div>
+                            <div class="pt-4 mt-auto">
+                                <button class="open-modal-btn inline-flex items-center gap-2 bg-slate-700 text-accent-light py-2 px-4 rounded-lg text-sm font-medium hover:bg-slate-600 transition-colors">
+                                    View Details
+                                    <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <h3 class="text-2xl font-semibold text-accent-light mb-8 text-center md:text-left">Machine Learning Project Suite</h3>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    
+<div class="project-card bg-card-bg rounded-xl overflow-hidden flex flex-col shadow-lg transition-transform duration-300 hover:-translate-y-1"
+     data-title="Loan Approval Prediction (Classification)"
+     data-desc="A classification model to determine the likelihood of a loan application being approved. Developed on Kaggle using Python and scikit-learn."
+     data-tags='["ML", "Classification", "Python", "scikit-learn"]'
+     data-image="images/loan.png"
+     data-github="#"
+     data-website="https://www.kaggle.com/code/kesarjain31/loan-approval"
+     data-pdf="#">
+
+    <div class="relative h-56">
+        <img src="images/loan.png" 
+             alt="Loan Approval Prediction" 
+             class="w-full h-full object-cover">
+        <span class="absolute top-4 left-4 bg-black/60 text-white text-xs py-1 px-3 rounded-full backdrop-blur-sm">
+            ML - Classification
+        </span>
+    </div>
+
+    <div class="p-6 flex flex-col gap-4 flex-grow">
+        <h4 class="text-xl font-bold text-white">Loan Approval Prediction</h4>
+        <p class="text-muted-text text-sm flex-grow">
+            A classification model to determine the likelihood of a loan application being approved.
+        </p>
+        <div class="flex flex-wrap gap-2">
+            <span class="bg-slate-700 text-light-text py-1 px-3 rounded-full text-xs">ML</span>
+            <span class="bg-slate-700 text-light-text py-1 px-3 rounded-full text-xs">Classification</span>
+        </div>
+        <div class="pt-4 mt-auto">
+            <button class="open-modal-btn inline-flex items-center gap-2 bg-slate-700 text-accent-light py-2 px-4 rounded-lg text-sm font-medium hover:bg-slate-600 transition-colors">
+                View Details
+                <i data-lucide="arrow-right" class="w-4 h-4"></i>
+            </button>
+        </div>
+    </div>
+</div>
+
+
+
+
+<div class="project-card bg-card-bg rounded-xl overflow-hidden flex flex-col shadow-lg transition-transform duration-300 hover:-translate-y-1"
+     data-title="Used Car Price Prediction (Regression)"
+     data-desc="Developing a regression model to accurately predict the resale price of used vehicles using Python and various regression algorithms."
+     data-tags='["ML", "Regression", "Python", "Data Analysis"]'
+     data-image="images/car.png"
+     data-github="#"
+     data-website="https://www.kaggle.com/code/kesarjain31/used-cars"
+     data-pdf="#">
+
+    <div class="relative h-56">
+        <img src="images/car.png" 
+             alt="Used Car Price Prediction" 
+             class="w-full h-full object-cover">
+        <span class="absolute top-4 left-4 bg-black/60 text-white text-xs py-1 px-3 rounded-full backdrop-blur-sm">
+            ML - Regression
+        </span>
+    </div>
+
+    <div class="p-6 flex flex-col gap-4 flex-grow">
+        <h4 class="text-xl font-bold text-white">Used Car Price Prediction</h4>
+        <p class="text-muted-text text-sm flex-grow">
+            Developing a regression model to accurately predict the resale price of used vehicles.
+        </p>
+        <div class="flex flex-wrap gap-2">
+            <span class="bg-slate-700 text-light-text py-1 px-3 rounded-full text-xs">ML</span>
+            <span class="bg-slate-700 text-light-text py-1 px-3 rounded-full text-xs">Regression</span>
+        </div>
+        <div class="pt-4 mt-auto">
+            <button class="open-modal-btn inline-flex items-center gap-2 bg-slate-700 text-accent-light py-2 px-4 rounded-lg text-sm font-medium hover:bg-slate-600 transition-colors">
+                View Details
+                <i data-lucide="arrow-right" class="w-4 h-4"></i>
+            </button>
+        </div>
+    </div>
+</div>
+
+
+
+
+<div class="project-card bg-card-bg rounded-xl overflow-hidden flex flex-col shadow-lg transition-transform duration-300 hover:-translate-y-1"
+     data-title="Mall Customer Segmentation (Clustering)"
+     data-desc="Using K-Means clustering to segment mall customers based on spending habits for targeted marketing. Implemented the clustering algorithm and visualization in Python."
+     data-tags='["ML", "Clustering", "K-Means", "Python"]'
+     data-image="images/mall.png"
+     data-github="#"
+     data-website="https://www.kaggle.com/code/kesarjain31/clustering"
+     data-pdf="#">
+
+    <div class="relative h-56">
+        <img src="images/mall.png" 
+             alt="Mall Customer Segmentation" 
+             class="w-full h-full object-cover">
+        <span class="absolute top-4 left-4 bg-black/60 text-white text-xs py-1 px-3 rounded-full backdrop-blur-sm">
+            ML - Clustering
+        </span>
+    </div>
+
+    <div class="p-6 flex flex-col gap-4 flex-grow">
+        <h4 class="text-xl font-bold text-white">Mall Customer Segmentation</h4>
+        <p class="text-muted-text text-sm flex-grow">
+            Using K-Means clustering to segment mall customers based on spending habits for targeted marketing.
+        </p>
+        <div class="flex flex-wrap gap-2">
+            <span class="bg-slate-700 text-light-text py-1 px-3 rounded-full text-xs">ML</span>
+            <span class="bg-slate-700 text-light-text py-1 px-3 rounded-full text-xs">Clustering</span>
+        </div>
+        <div class="pt-4 mt-auto">
+            <button class="open-modal-btn inline-flex items-center gap-2 bg-slate-700 text-accent-light py-2 px-4 rounded-lg text-sm font-medium hover:bg-slate-600 transition-colors">
+                View Details
+                <i data-lucide="arrow-right" class="w-4 h-4"></i>
+            </button>
+        </div>
+    </div>
+</div>
+
+
+                </div>
+
+            </div>
+        </section>
+
+        <section id="contact" class="py-24 bg-dark-bg/50">
+            <div class="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-16">
+                
+                <div class="flex flex-col gap-8">
+                    <h2 class="text-4xl font-bold text-white">GET IN TOUCH</h2>
+                    <p class="text-lg text-muted-text">
+                        Looking for internships and opportunities to collaborate on innovative projects. Let's connect and build something amazing together!
+                    </p>
+                    
+                    <div class="flex flex-col gap-4">
+                        <a href="mailto:jainkesar477@gmail.com" class="bg-card-bg p-5 rounded-lg flex items-center gap-5 transition-transform duration-300 hover:-translate-y-1 shadow-lg">
+                            <i data-lucide="mail" class="text-accent-light w-8 h-8 flex-shrink-0"></i>
+                            <div>
+                                <h5 class="text-white font-semibold">Email</h5>
+                                <p class="text-muted-text hover:text-accent-light transition-colors duration-300">jainkesar477@gmail.com</p>
+                            </div>
+                        </a>
+                        <div class="bg-card-bg p-5 rounded-lg flex items-center gap-5 shadow-lg">
+                            <i data-lucide="phone" class="text-accent-light w-8 h-8 flex-shrink-0"></i>
+                            <div>
+                                <h5 class="text-white font-semibold">Phone</h5>
+                                <p class="text-muted-text">+91 832-852-0641</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <a href="https://github.com/kesarjain3118" target="_blank" class="bg-card-bg p-4 rounded-lg flex-1 flex items-center justify-center gap-3 text-light-text hover:text-white hover:bg-slate-700 transition-all duration-300 shadow-lg">
+                            <i data-lucide="github" class="w-5 h-5"></i>
+                            <span class="font-medium">GitHub</span>
+                        </a>
+                        <a href="https://www.linkedin.com/in/kesar-jain-576474289" target="_blank" class="bg-card-bg p-4 rounded-lg flex-1 flex items-center justify-center gap-3 text-light-text hover:text-white hover:bg-slate-700 transition-all duration-300 shadow-lg">
+                            <i data-lucide="linkedin" class="w-5 h-5"></i>
+                            <span class="font-medium">LinkedIn</span>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="flex flex-col gap-8">
+                    <h3 class="text-3xl font-bold text-white">CERTIFICATIONS</h3>
+                    
+                    <div class="flex flex-col gap-4">
+                        
+                        <div class="bg-card-bg p-5 rounded-lg shadow-lg">
+                            <h5 class="text-white font-semibold">Introduction to TensorFlow for AI, ML, and Deep Learning</h5>
+                            <p class="text-accent-light text-sm">DeepLearning.AI</p>
+                        </div>
+                        <div class="bg-card-bg p-5 rounded-lg shadow-lg">
+                            <h5 class="text-white font-semibold">Introduction to Operating Systems (Specialization)</h5>
+                            <p class="text-accent-light text-sm">Codio</p>
+                        </div>
+                        <div class="bg-card-bg p-5 rounded-lg shadow-lg">
+                            <h5 class="text-white font-semibold">Network Security</h5>
+                            <p class="text-accent-light text-sm">Cisco</p>
+                        </div>
+                        <div class="bg-card-bg p-5 rounded-lg shadow-lg">
+                            <h5 class="text-white font-semibold">Introduction to NoSQL Databases</h5>
+                            <p class="text-accent-light text-sm">IBM</p>
+                        </div>
+                        <div class="bg-card-bg p-5 rounded-lg shadow-lg">
+                            <h5 class="text-white font-semibold">Algorithmic Toolbox</h5>
+                            <p class="text-accent-light text-sm">University of California, San Diego</p>
+                        </div>
+                        <div class="bg-card-bg p-5 rounded-lg shadow-lg">
+                            <h5 class="text-white font-semibold">Crash Course on Python</h5>
+                            <p class="text-accent-light text-sm">Google</p>
+                        </div>
+                        
+                        <div class="bg-card-bg p-5 rounded-lg shadow-lg">
+                            <h5 class="text-white font-semibold">Accenture Nordics Software Engineering simulation</h5>
+                            <p class="text-accent-light text-sm">Forage</p>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div id="projectModal" class="fixed inset-0 z-[60] bg-black/60 backdrop-blur-sm flex items-center justify-center p-4 hidden modal-backdrop">
+        <div class="bg-card-bg w-full max-w-2xl rounded-xl shadow-2xl overflow-hidden modal-content">
+            <div class="p-6 border-b border-slate-700">
+                <div class="flex justify-between items-center">
+                    <h3 id="modalTitle" class="text-2xl font-bold text-white">Project Title</h3>
+                    <button id="modalClose" class="text-muted-text hover:text-white transition-colors">
+                        <i data-lucide="x" class="w-8 h-8"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <div class="p-6 flex flex-col md:flex-row gap-6">
+                <img id="modalImage" src="https" alt="Project Image" class="w-full md:w-1/2 h-auto object-cover rounded-lg" onerror="this.onerror=null;this.src='https://placehold.co/600x400/2a3a50/e2e8f0?text=Project';">
+                <div class="flex flex-col gap-4">
+                    <p id="modalDesc" class="text-muted-text">Project description...</p>
+                    <div id="modalTags" class="flex flex-wrap gap-2">
+                        </div>
+                </div>
+            </div>
+
+            <div class="p-6 bg-slate-900/50 flex flex-col sm:flex-row gap-4">
+                <a id="modalGithub" href="#" target="_blank" class="modal-link flex-1 bg-slate-700 text-light-text hover:bg-slate-600 p-3 rounded-lg flex items-center justify-center gap-2 transition-colors">
+                    <i data-lucide="github" class="w-5 h-5"></i>
+                    <span class="font-medium">GitHub</span>
+                </a>
+                <a id="modalWebsite" href="#" target="_blank" class="modal-link flex-1 bg-accent text-white hover:bg-cyan-600 p-3 rounded-lg flex items-center justify-center gap-2 transition-colors">
+                    <i data-lucide="external-link" class="w-5 h-5"></i>
+                    <span class="font-medium">Live Demo</span>
+                </a>
+                <a id="modalPdf" href="#" target="_blank" class="modal-link flex-1 bg-slate-700 text-light-text hover:bg-slate-600 p-3 rounded-lg flex items-center justify-center gap-2 transition-colors">
+                    <i data-lucide="file-text" class="w-5 h-5"></i>
+                    <span class="font-medium">Case Study (PDF)</span>
+                </a>
+            </div>
+        </div>
+    </div>
+    <footer class="py-12 border-t border-card-bg/50">
+        <div class="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-6">
+            <div class="flex items-center gap-3">
+                <a href="#home" class="bg-accent text-white font-bold text-2xl w-10 h-10 flex items-center justify-center rounded-lg shadow-lg">K</a>
+                <span class="text-white font-bold text-xl hidden sm:block">KESAR JAIN</span>
+            </div>
+            <p class="text-muted-text text-sm text-center">
+                © 2025 Kesar Jain. All rights reserved.
+            </p>
+            <p class="text-muted-text text-sm">
+                Built with HTML, CSS & Tailwind
+            </p>
+        </div>
+    </footer>
+
+    <script src="script.js" defer></script>
+
+</body>
+</html>

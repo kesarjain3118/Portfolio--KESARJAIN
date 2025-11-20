@@ -1,0 +1,70 @@
+/*
+  This file contains custom CSS rules that supplement Tailwind CSS.
+  The main Tailwind styles are applied via the CDN and config in index.html.
+*/
+
+body {
+    font-family: 'Inter', sans-serif;
+    /* Base bg and text colors are set by Tailwind config */
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+::-webkit-scrollbar-track {
+    background: #1e293b; /* card-bg */
+}
+::-webkit-scrollbar-thumb {
+    background: #06b6d4; /* accent */
+    border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #0891b2; /* A slightly darker accent */
+}
+
+/* Hero image glow effect */
+.hero-image-glow {
+    box-shadow: 0 0 60px -10px rgba(6, 182, 212, 0.4);
+}
+
+/* Active nav link style - applies to both desktop and mobile nav links */
+.nav-link.active,
+.mobile-nav-link.active {
+    color: #22d3ee !important; /* accent-light */
+    font-weight: 600; /* Added a bit more emphasis */
+}
+
+/* --- MODAL STYLES --- */
+
+.modal-backdrop {
+    opacity: 0;
+    transition: opacity 0.3s ease-out;
+    visibility: hidden;
+}
+
+.modal-backdrop.hidden {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.modal-backdrop:not(.hidden) {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal-content {
+    transform: scale(0.95);
+    opacity: 0;
+    transition: all 0.3s ease-out;
+}
+
+.modal-backdrop:not(.hidden) .modal-content {
+    transform: scale(1);
+    opacity: 1;
+}
+
+/* Hide link buttons if they have the 'hidden' class */
+.modal-link.hidden {
+    display: none;
+}
