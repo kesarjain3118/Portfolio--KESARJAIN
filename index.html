@@ -70,6 +70,17 @@
 
         html {
             scroll-behavior: smooth;
+            scroll-padding-top: 80px;
+        }
+
+        .email-link {
+            color: #4da3ff;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .email-link:hover {
+            text-decoration: underline;
         }
     </style>
 </head>
@@ -199,10 +210,7 @@
                     <div class="grid md:grid-cols-[250px_1fr] gap-8 items-start">
                         <div class="flex flex-col items-center">
                             <div class="w-64 h-64 rounded-full border-4 border-accent-orange overflow-hidden mb-4">
-                                <div
-                                    class="w-full h-full bg-gradient-to-br from-accent-orange to-accent-blue flex items-center justify-center text-white text-6xl font-bold">
-                                    KJ
-                                </div>
+                                <img src="images/my.jpg" alt="Kesar Jain" class="w-full h-full object-cover">
                             </div>
                             <h3 class="text-2xl font-serif font-bold">Kesar Jain</h3>
                             <svg class="w-32 mt-2" height="20" viewBox="0 0 150 20">
@@ -1251,8 +1259,8 @@
                         <div class="bg-white dark:bg-[#1a1f26] rounded-2xl p-6 hover-lift">
                             <p class="text-3xl mb-2">📧</p>
                             <h3 class="font-bold mb-2">Email</h3>
-                            <a href="mailto:jainkesar477@gmail.com" target="_blank"
-                                class="text-accent-blue hover:underline">Send me an email</a>
+                            <a href="mailto:jainkesar477@gmail.com?subject=Let's%20Work%20Together"
+                                class="text-accent-blue hover:underline">jainkesar477@gmail.com</a>
                         </div>
 
 
@@ -1276,10 +1284,13 @@
                         <h3 class="text-3xl font-bold mb-4">Let's Work Together</h3>
                         <p class="text-lg mb-6">I'm always interested in hearing about new projects and opportunities.
                             Feel free to reach out!</p>
-                        <a href="mailto:jainkesar477@gmail.com" target="_blank"
-                            class="inline-block px-8 py-3 bg-white text-accent-orange rounded-full font-semibold hover:bg-opacity-90 transition-opacity text-center">
-                            Send me an email
+                        <a href="mailto:jainkesar477@gmail.com?subject=Let's%20Work%20Together&body=Hi%20Kesar,%0A%0AI'd%20like%20to%20connect%20with%20you."
+                            class="inline-block px-8 py-3 bg-white text-accent-orange rounded-full font-semibold hover:bg-opacity-90 transition-opacity text-center mb-4">
+                            Let's Work Together
                         </a>
+                        <p class="text-sm text-white/90 text-center">
+                            or copy: <strong>jainkesar477@gmail.com</strong>
+                        </p>
                     </div>
                 </div>
             </div>
@@ -1291,8 +1302,6 @@
         <div class="container mx-auto max-w-6xl">
             <div class="grid md:grid-cols-3 gap-8 text-center md:text-left">
                 <p class="text-2xl font-serif font-bold mb-2">Kesar Jain</p>
-                <a href="mailto:jainkesar477@gmail.com" target="_blank"
-                    class="text-accent-blue hover:underline text-sm">Contact Me</a>
             </div>
             <div class="flex items-center justify-center">
                 <p class="text-[#6a6a6a] dark:text-[#808080]">© 2025 Kesar Jain. All rights reserved.</p>
