@@ -2,20 +2,18 @@
 <html lang="en" class="scroll-smooth">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description"
-        content="Kesar Jain - B.Tech Computer Science Student Portfolio showcasing projects in web development, AI, IoT, and machine learning.">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Kesar Jain - Portfolio</title>
 
-    <!-- Google Fonts -->
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Serif+Display:ital@0;1&family=Caveat:wght@400;600;700&display=swap"
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Serif+Display&family=Caveat:wght@400;600&display=swap"
         rel="stylesheet">
 
-    <!-- Tailwind CSS -->
+    <!-- Tailwind -->
     <script src="https://cdn.tailwindcss.com"></script>
 
     <script>
@@ -24,1518 +22,147 @@
             theme: {
                 extend: {
                     fontFamily: {
-                        sans: ['DM Sans', 'sans-serif'],
-                        serif: ['DM Serif Display', 'serif'],
-                        handwriting: ['Caveat', 'cursive'],
-                    },
-                    colors: {
-                        cream: '#FAF7F2',
-                        'accent-orange': '#e97451',
-                        'accent-blue': '#5B9BD5',
+                        sans: ['DM Sans'],
+                        serif: ['DM Serif Display'],
+                        handwriting: ['Caveat']
                     }
                 }
             }
         }
     </script>
-
-    <style>
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .fade-in {
-            animation: fadeInUp 0.6s ease-out forwards;
-        }
-
-        .hover-lift {
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .hover-lift:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-        }
-
-        .project-hover:hover {
-            transform: translateY(-8px);
-        }
-
-        html {
-            scroll-behavior: smooth;
-            scroll-padding-top: 80px;
-        }
-
-        .email-link {
-            color: #4da3ff;
-            text-decoration: none;
-            font-weight: 500;
-        }
-
-        .email-link:hover {
-            text-decoration: underline;
-        }
-    </style>
 </head>
 
-<body class="bg-cream dark:bg-[#0f1419] text-[#1a1a1a] dark:text-[#e8e8e8] font-sans transition-colors duration-300">
+<body class="bg-[#faf7f2] dark:bg-[#0f1419] text-[#1a1a1a] dark:text-white">
 
-    <!-- Navigation -->
-    <nav
-        class="sticky top-0 z-50 bg-cream/80 dark:bg-[#0f1419]/80 backdrop-blur-md border-b border-[#1a1a1a]/10 dark:border-white/10">
-        <div class="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-20">
-                <a href="#home" class="text-2xl font-serif font-bold">Kesar Jain</a>
-
-                <div class="hidden md:flex items-center gap-8">
-                    <a href="#about" class="hover:text-accent-orange transition-colors">About</a>
-                    <a href="#work" class="hover:text-accent-orange transition-colors">Work</a>
-
-                    <a href="#skills" class="hover:text-accent-orange transition-colors">Skills</a>
-                    <a href="#certifications" class="hover:text-accent-orange transition-colors">Certifications</a>
-                    <a href="#contact" class="hover:text-accent-orange transition-colors">Contact</a>
-
-                    <button id="themeToggle" class="p-2 rounded-lg hover:bg-black/5 dark:hover:bg-white/5"
-                        aria-label="Toggle theme">
-                        <svg class="w-5 h-5 hidden dark:block" fill="currentColor" viewBox="0 0 20 20">
-                            <path
-                                d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" />
-                        </svg>
-                        <svg class="w-5 h-5 dark:hidden" fill="currentColor" viewBox="0 0 20 20">
-                            <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z" />
-                        </svg>
-                    </button>
-                </div>
-
-                <button id="mobileMenuBtn" class="md:hidden p-2" aria-label="Toggle menu">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M4 6h16M4 12h16M4 18h16" />
-                    </svg>
-                </button>
-            </div>
-        </div>
-
-        <!-- Mobile Menu -->
-        <div id="mobileMenu" class="hidden md:hidden border-t border-[#1a1a1a]/10 dark:border-white/10">
-            <div class="container mx-auto max-w-7xl px-4 py-4 flex flex-col gap-4">
-                <a href="#about" class="hover:text-accent-orange transition-colors">About</a>
-                <a href="#work" class="hover:text-accent-orange transition-colors">Work</a>
-
-                <a href="#skills" class="hover:text-accent-orange transition-colors">Skills</a>
-                <a href="#certifications" class="hover:text-accent-orange transition-colors">Certifications</a>
-                <a href="#contact" class="hover:text-accent-orange transition-colors">Contact</a>
-                <button id="mobileThemeToggle" class="text-left hover:text-accent-orange transition-colors">Toggle
-                    Theme</button>
-            </div>
-        </div>
-    </nav>
-
-    <main>
-        <!-- Hero Section -->
-        <section id="home" class="min-h-screen flex items-center justify-center py-20 px-4 relative overflow-hidden">
-            <!-- Decorative Doodles -->
-            <svg class="absolute top-20 left-10 w-8 h-8 text-accent-orange/20" viewBox="0 0 24 24" fill="none"
-                stroke="currentColor">
-                <path
-                    d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
-            </svg>
-            <svg class="absolute top-40 right-20 w-6 h-6 text-accent-blue/20" viewBox="0 0 24 24" fill="currentColor">
-                <circle cx="12" cy="12" r="3" />
-            </svg>
-            <svg class="absolute bottom-40 left-20 w-10 h-10 text-accent-orange/20" viewBox="0 0 24 24" fill="none"
-                stroke="currentColor">
-                <path
-                    d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
-            </svg>
-
-            <div class="container mx-auto max-w-5xl text-center">
-                <p class="text-5xl font-handwriting text-accent-orange mb-4">Hi, I'm Kesar</p>
-                <svg class="w-16 h-16 mx-auto text-accent-orange mb-8" viewBox="0 0 100 50">
-                    <path d="M10 10 Q 25 40 50 25 T 90 10" stroke="currentColor" stroke-width="3" fill="none"
-                        stroke-linecap="round" />
-                    <path d="M85 5 L 90 10 L 85 15" stroke="currentColor" stroke-width="3" fill="none"
-                        stroke-linecap="round" />
-                </svg>
-
-                <h1 class="text-4xl md:text-6xl font-serif font-bold leading-tight mb-8">
-                    From <span class="relative inline-block">data<svg class="absolute -bottom-2 left-0 w-full"
-                            height="8" viewBox="0 0 200 8">
-                            <path d="M5 5 Q 100 0 195 5" stroke="#e97451" stroke-width="3" fill="none" />
-                        </svg></span> and <span class="relative inline-block">machine learning<svg
-                            class="absolute -bottom-2 left-0 w-full" height="8" viewBox="0 0 300 8">
-                            <path d="M5 5 Q 150 0 295 5" stroke="#e97451" stroke-width="3" fill="none" />
-                        </svg></span> to full-stack software systems,<br class="hidden md:block" />
-                    I enjoy building <strong class="border-b-4 border-[#1a1a1a] dark:border-[#e8e8e8]">end-to-end
-                        solutions</strong> grounded in strong<br class="hidden md:block" /> computer science
-                    fundamentals.
-                </h1>
-
-                <div class="flex flex-col sm:flex-row gap-4 justify-center mb-8">
-                    <a href="#work"
-                        class="px-8 py-3 bg-[#1a1a1a] dark:bg-white text-white dark:text-[#1a1a1a] rounded-full hover:opacity-90 transition-opacity font-medium">View
-                        my work</a>
-
-                </div>
-
-                <p class="text-xl text-[#4a4a4a] dark:text-[#b0b0b0] relative inline-block">
-                    Curious by nature. Serious about building things that last.
-                    <svg class="absolute -bottom-4 left-0 w-full" height="20" viewBox="0 0 400 20">
-                        <path d="M5 10 Q 50 5 100 10 T 200 10 T 300 10 T 395 10" stroke="currentColor" stroke-width="2"
-                            fill="none" />
-                    </svg>
-                </p>
-            </div>
-        </section>
-
-        <!-- About Section -->
-        <section id="about" class="py-20 px-4">
-            <div class="container mx-auto max-w-6xl">
-                <div class="text-center mb-16">
-                    <p class="text-4xl mb-2">💡</p>
-                    <h2 class="text-4xl md:text-5xl font-serif font-bold mb-4">About Me</h2>
-                    <p class="text-lg text-[#4a4a4a] dark:text-[#b0b0b0]">A bit about how I approach learning, building,
-                        and problem-solving.</p>
-                </div>
-
-                <!-- Main About Card -->
-                <div class="bg-white dark:bg-[#1a1f26] rounded-3xl p-8 md:p-12 mb-8 hover-lift">
-                    <div class="grid md:grid-cols-[250px_1fr] gap-8 items-start">
-                        <div class="flex flex-col items-center">
-                            <div class="w-64 h-64 rounded-full border-4 border-accent-orange overflow-hidden mb-4">
-                                <img src="images/my.jpg" alt="Kesar Jain" class="w-full h-full object-cover">
-                            </div>
-                            <h3 class="text-2xl font-serif font-bold">Kesar Jain</h3>
-                            <svg class="w-32 mt-2" height="20" viewBox="0 0 150 20">
-                                <path d="M5 10 Q 40 5 75 10 T 145 10" stroke="currentColor" stroke-width="2"
-                                    fill="none" />
-                            </svg>
-                        </div>
-
-                        <div class="space-y-4 text-[#4a4a4a] dark:text-[#b0b0b0] leading-relaxed">
-                            <p>I'm a computer science student who enjoys understanding how systems work beneath the
-                                surface — where data, logic, and engineering decisions come together. I've built
-                                projects across data, machine learning, software engineering, and web systems, often
-                                working end-to-end rather than in isolated parts.</p>
-
-                            <p>Alongside technical work, I bring strong communication, analytical reasoning, and
-                                business awareness to what I do. I'm comfortable explaining complex ideas clearly,
-                                thinking from an impact-driven perspective, and collaborating across teams to turn ideas
-                                into working solutions.</p>
-
-                            <p>I value clarity, execution, and continuous improvement — and I'm motivated by building
-                                things that make sense both technically and practically.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Background Cards -->
-                <div class="grid md:grid-cols-2 gap-8 mb-8">
-                    <!-- Education (University) -->
-                    <div class="bg-white dark:bg-[#1a1f26] rounded-3xl p-8 hover-lift">
-                        <p class="text-3xl mb-4">📚</p>
-                        <h3 class="text-2xl font-bold mb-4">Education (University)</h3>
-                        <div class="space-y-3 text-[#4a4a4a] dark:text-[#b0b0b0]">
-                            <p class="font-bold text-[#1a1a1a] dark:text-[#e8e8e8] text-lg">Woxsen University, Hyderabad
-                            </p>
-                            <p class="font-semibold">B.Tech in Computer Science Engineering</p>
-                            <p class="text-sm">(2023 – Present)</p>
-                            <div class="pt-2 space-y-1">
-                                <p><strong class="text-[#1a1a1a] dark:text-[#e8e8e8]">CGPA:</strong> 8.56/10</p>
-                                <p><strong class="text-[#1a1a1a] dark:text-[#e8e8e8]">SGPA:</strong> 9.3</p>
-                                <p><strong class="text-[#1a1a1a] dark:text-[#e8e8e8]">Expected Graduation:</strong> 2027
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Schooling -->
-                    <div class="bg-white dark:bg-[#1a1f26] rounded-3xl p-8 hover-lift">
-                        <p class="text-3xl mb-4">🏫</p>
-                        <h3 class="text-2xl font-bold mb-4">Schooling</h3>
-                        <div class="space-y-3 text-[#4a4a4a] dark:text-[#b0b0b0]">
-                            <p class="font-bold text-[#1a1a1a] dark:text-[#e8e8e8] text-lg">Sri Prakash Synergy School
-                                (CBSE)</p>
-                            <p class="text-sm">(2019 – 2023)</p>
-                            <div class="pt-2 space-y-1">
-                                <p><strong class="text-[#1a1a1a] dark:text-[#e8e8e8]">XII:</strong> 71%</p>
-                                <p><strong class="text-[#1a1a1a] dark:text-[#e8e8e8]">X:</strong> 84%</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Achievements -->
-                <div class="grid md:grid-cols-3 gap-8 mb-16">
-                    <!-- Achievement 1: Woxsen Olympiad -->
-                    <div
-                        class="bg-gradient-to-br from-yellow-400 to-orange-500 text-white rounded-2xl p-6 hover-lift flex flex-col h-full shadow-lg">
-                        <div class="mb-4">
-                            <span class="text-3xl drop-shadow-md">🏆</span>
-                        </div>
-                        <h3 class="text-xl font-bold mb-2">Woxsen Olympiad 2026</h3>
-                        <p class="text-white/90 font-semibold mb-2">Top 24 Performer</p>
-                        <p class="text-white/80 mb-4 flex-grow text-sm">
-                            Ranked Top 24 among all participants after clearing three competitive rounds focused on
-                            Communication Skills and Aptitude. Demonstrated critical thinking, clarity of communication,
-                            and problem-solving under pressure.
-                        </p>
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            <span
-                                class="px-2 py-1 bg-white/20 text-white text-xs rounded-full backdrop-blur-sm">Communication</span>
-                            <span
-                                class="px-2 py-1 bg-white/20 text-white text-xs rounded-full backdrop-blur-sm">Aptitude</span>
-                        </div>
-                        <a href="https://www.linkedin.com/posts/kesar-jain_woxsenuniversity-woxsenolympiad-top24-ugcPost-7424782480190345216-ZXFd?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEYDlSoBNiKpzdjltnz75Cv-hLI4xotva-k"
-                            target="_blank"
-                            class="text-white hover:text-white/80 text-sm font-semibold flex items-center gap-1 mt-auto transition-colors">
-                            View Insight
-                            <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14">
-                                </path>
-                            </svg>
-                        </a>
-                    </div>
-
-                    <!-- Achievement 2: Prompt Engineering Workshop -->
-                    <div
-                        class="bg-gradient-to-br from-blue-500 to-indigo-600 text-white rounded-2xl p-6 hover-lift flex flex-col h-full shadow-lg">
-                        <div class="mb-4">
-                            <span class="text-3xl drop-shadow-md">⭐</span>
-                        </div>
-                        <h3 class="text-xl font-bold mb-2">Prompt Engineering Workshop</h3>
-                        <p class="text-white/90 font-semibold mb-2">IIT Bombay Techfest</p>
-                        <p class="text-white/80 mb-4 flex-grow text-sm">
-                            Completed hands-on workshop focused on designing effective prompts, understanding AI model
-                            behavior, and applying prompt engineering techniques to real-world use cases on the IIT
-                            Bombay campus.
-                        </p>
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            <span
-                                class="px-2 py-1 bg-white/20 text-white text-xs rounded-full backdrop-blur-sm">AI</span>
-                            <span class="px-2 py-1 bg-white/20 text-white text-xs rounded-full backdrop-blur-sm">Prompt
-                                Engineering</span>
-                        </div>
-                        <a href="https://www.linkedin.com/posts/kesar-jain_iitbombay-techfest-promptengineering-ugcPost-7422153058056425474-ZH9q?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEYDlSoBNiKpzdjltnz75Cv-hLI4xotva-k"
-                            target="_blank"
-                            class="text-white hover:text-white/80 text-sm font-semibold flex items-center gap-1 mt-auto transition-colors">
-                            View Insight
-                            <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14">
-                                </path>
-                            </svg>
-                        </a>
-                    </div>
-
-                    <!-- Achievement 3: Met Vineeta Singh -->
-                    <div
-                        class="bg-gradient-to-br from-pink-500 to-rose-500 text-white rounded-2xl p-6 hover-lift flex flex-col h-full shadow-lg">
-                        <div class="mb-4">
-                            <span class="text-3xl drop-shadow-md">🤝</span>
-                        </div>
-                        <h3 class="text-xl font-bold mb-2">Networking & Mentorship</h3>
-                        <p class="text-white/90 font-semibold mb-2">Met Vineeta Singh (CEO, SUGAR)</p>
-                        <p class="text-white/80 mb-4 flex-grow text-sm">
-                            Had the incredible opportunity to meet Vineeta Singh, CEO of SUGAR Cosmetics and judge on
-                            Shark Tank India. Gained valuable insights into building brands from ground up and
-                            entrepreneurship.
-                        </p>
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            <span
-                                class="px-2 py-1 bg-white/20 text-white text-xs rounded-full backdrop-blur-sm">Entrepreneurship</span>
-                            <span
-                                class="px-2 py-1 bg-white/20 text-white text-xs rounded-full backdrop-blur-sm">Networking</span>
-                        </div>
-                        <a href="https://www.linkedin.com/posts/kesar-jain_had-the-incredible-opportunity-to-meet-vineeta-share-7305886343853654016-6cQS?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEYDlSoBNiKpzdjltnz75Cv-hLI4xotva-k"
-                            target="_blank"
-                            class="text-white hover:text-white/80 text-sm font-semibold flex items-center gap-1 mt-auto transition-colors">
-                            View Insight
-                            <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14">
-                                </path>
-                            </svg>
-                        </a>
-                    </div>
-
-                </div>
-        </section>
-
-        <!-- Work/Projects Section -->
-        <section id="work" class="py-20 px-4 bg-[#f5f5f5] dark:bg-[#0a0e13] relative">
-            <!-- Subtle dotted grid background -->
-            <div class="absolute inset-0 opacity-10 dark:opacity-5"
-                style="background-image: radial-gradient(circle, #aaa 1px, transparent 1px); background-size: 24px 24px;">
-            </div>
-
-            <div class="container mx-auto max-w-6xl relative z-10">
-                <!-- Header with doodle -->
-                <div class="text-center mb-12 relative">
-                    <!-- Small hand-drawn arrow doodle -->
-                    <svg class="absolute -top-4 left-1/2 -translate-x-24 w-12 h-12 text-[#6b9bd1] opacity-60"
-                        viewBox="0 0 50 50" fill="none" stroke="currentColor" stroke-width="1.5">
-                        <path d="M5 25 Q 15 15 25 20 T 40 15" stroke-linecap="round" />
-                        <path d="M35 12 L 40 15 L 37 20" stroke-linecap="round" />
-                    </svg>
-
-                    <h2 class="text-5xl font-sans font-bold text-[#2a2a2a] dark:text-[#e8e8e8] mb-3">Work</h2>
-
-                    <!-- Subtitle with wavy underline doodle -->
-                    <p class="text-base text-[#666] dark:text-[#999] relative inline-block">
-                        Explore my projects in computer science, data, and AI.
-                        <svg class="absolute -bottom-2 left-0 w-full h-2" viewBox="0 0 200 8" fill="none"
-                            stroke="currentColor" stroke-width="1.5" opacity="0.4">
-                            <path d="M5 4 Q 50 2 100 4 T 195 4" stroke-linecap="round" />
-                        </svg>
-                    </p>
-
-                    <!-- Small decorative dots and stars -->
-                    <svg class="absolute top-0 right-1/4 w-4 h-4 text-[#6b9bd1] opacity-50" viewBox="0 0 20 20">
-                        <path d="M10 2 L12 8 L18 10 L12 12 L10 18 L8 12 L2 10 L8 8 Z" fill="currentColor" />
-                    </svg>
-                    <svg class="absolute bottom-2 left-1/4 w-3 h-3 text-[#6b9bd1] opacity-40" viewBox="0 0 10 10">
-                        <circle cx="5" cy="5" r="2" fill="currentColor" />
-                    </svg>
-                    <!-- Little heart sticker -->
-                    <svg class="absolute -top-2 right-1/3 w-5 h-5 text-[#ff6b9d] opacity-40" viewBox="0 0 24 24"
-                        fill="currentColor">
-                        <path
-                            d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
-                    </svg>
-                    <!-- Sparkle doodle -->
-                    <svg class="absolute top-1 left-1/3 w-4 h-4 text-[#ffd700] opacity-50" viewBox="0 0 24 24"
-                        fill="currentColor">
-                        <path d="M12 2l1.5 4.5L18 8l-4.5 1.5L12 14l-1.5-4.5L6 8l4.5-1.5L12 2z" />
-                        <path d="M18 14l1 2 2 1-2 1-1 2-1-2-2-1 2-1 1-2z" />
-                    </svg>
-                </div>
-
-                <!-- Category Filter Bar -->
-                <div class="flex flex-wrap justify-center gap-3 mb-16">
-                    <button
-                        class="category-filter active px-5 py-2 rounded-full bg-[#6b9bd1] text-white font-medium text-sm transition-all"
-                        data-category="all">
-                        All
-                    </button>
-                    <button
-                        class="category-filter px-5 py-2 rounded-full bg-white dark:bg-[#1a1f26] text-[#666] dark:text-[#999] font-medium text-sm hover:bg-[#e8e8e8] dark:hover:bg-[#252a31] transition-all"
-                        data-category="data">
-                        Data & Analytics
-                    </button>
-                    <button
-                        class="category-filter px-5 py-2 rounded-full bg-white dark:bg-[#1a1f26] text-[#666] dark:text-[#999] font-medium text-sm hover:bg-[#e8e8e8] dark:hover:bg-[#252a31] transition-all"
-                        data-category="software">
-                        Software
-                    </button>
-                    <button
-                        class="category-filter px-5 py-2 rounded-full bg-white dark:bg-[#1a1f26] text-[#666] dark:text-[#999] font-medium text-sm hover:bg-[#e8e8e8] dark:hover:bg-[#252a31] transition-all"
-                        data-category="aiml">
-                        AI / ML
-                    </button>
-                    <button
-                        class="category-filter px-5 py-2 rounded-full bg-white dark:bg-[#1a1f26] text-[#666] dark:text-[#999] font-medium text-sm hover:bg-[#e8e8e8] dark:hover:bg-[#252a31] transition-all"
-                        data-category="systems">
-                        Systems & IoT
-                    </button>
-                </div>
-
-                <!-- Decorative doodles around filters -->
-                <svg class="absolute top-32 left-8 w-16 h-16 text-[#6b9bd1] opacity-20" viewBox="0 0 50 50" fill="none"
-                    stroke="currentColor" stroke-width="1.5">
-                    <path d="M10 20 Q 20 10 30 20" stroke-linecap="round" />
-                    <circle cx="8" cy="8" r="1.5" fill="currentColor" />
-                </svg>
-                <svg class="absolute top-32 right-8 w-20 h-20 text-[#6b9bd1] opacity-20" viewBox="0 0 50 50" fill="none"
-                    stroke="currentColor" stroke-width="1.5">
-                    <path d="M15 25 Q 25 30 35 25" stroke-linecap="round" />
-                    <path d="M10 15 L 12 18" stroke-linecap="round" />
-                </svg>
-                <!-- Lightning bolt sticker -->
-                <svg class="absolute top-40 right-20 w-6 h-6 text-[#ffc107] opacity-40" viewBox="0 0 24 24"
-                    fill="currentColor">
-                    <path d="M7 2v11h3v9l7-12h-4l4-8z" />
-                </svg>
-                <!-- Checklist doodle -->
-                <svg class="absolute top-36 left-16 w-8 h-8 text-[#6b9bd1] opacity-25" viewBox="0 0 24 24" fill="none"
-                    stroke="currentColor" stroke-width="1.5">
-                    <path d="M3 6h2M7 6h14M3 12h2M7 12h14M3 18h2M7 18h14" stroke-linecap="round" />
-                    <path d="M4 6l.5.5 1-1M4 12l.5.5 1-1" stroke-linecap="round" stroke-linejoin="round" />
-                </svg>
-
-                <!-- Projects Grid - ALL CARDS SAME SIZE -->
-                <div id="projectsGrid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-
-                    <!-- E-commerce Sales Dashboard (Power BI) -->
-                    <div class="project-card bg-white dark:bg-[#1a1f26] rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all hover:-translate-y-1 flex flex-col h-full"
-                        data-category="data" data-title="E-commerce Sales Dashboard (Power BI)"
-                        data-desc="Interactive dashboard visualizing sales performance, customer insights, and profit analysis using Power BI."
-                        data-tags='["Power BI Desktop", "DAX", "Microsoft Excel / CSV"]'
-                        data-image="images/doodle_ecommerce.png" data-github="#" data-website="#">
-
-                        <div class="relative h-48 sm:h-56">
-                            <img src="images/doodle_ecommerce.png" alt="E-commerce Sales Dashboard"
-                                class="w-full h-full object-cover">
-                            <span
-                                class="absolute top-4 left-4 bg-black/60 text-white text-xs py-1 px-3 rounded-full backdrop-blur-sm">Data
-                                / Analytics</span>
-                        </div>
-
-                        <div class="p-6 flex flex-col gap-4 flex-grow">
-                            <h4 class="text-lg font-semibold text-[#2a2a2a] dark:text-[#e8e8e8] mb-1 line-clamp-1">
-                                E-commerce Sales Dashboard (Power BI)</h4>
-                            <p class="text-sm text-[#666] dark:text-[#999] mb-2 line-clamp-2 flex-grow">
-                                Interactive dashboard visualizing sales performance, customer insights, and profit
-                                analysis.
-                            </p>
-                            <div class="flex flex-wrap gap-2 mb-4">
-                                <span
-                                    class="px-3 py-1 bg-[#f0f0f0] dark:bg-[#252a31] text-[#666] dark:text-[#999] rounded-full text-xs">Power
-                                    BI Desktop</span>
-                                <span
-                                    class="px-3 py-1 bg-[#f0f0f0] dark:bg-[#252a31] text-[#666] dark:text-[#999] rounded-full text-xs">DAX</span>
-                                <span
-                                    class="px-3 py-1 bg-[#f0f0f0] dark:bg-[#252a31] text-[#666] dark:text-[#999] rounded-full text-xs">Excel/CSV</span>
-                            </div>
-                            <div class="mt-auto">
-                                <button
-                                    class="open-modal-btn w-full px-4 py-2 border border-[#6b9bd1] text-[#6b9bd1] hover:bg-[#6b9bd1] hover:text-white rounded-lg font-medium text-sm text-center transition-all flex items-center justify-center gap-2">
-                                    View Details
-                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                            d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                                    </svg>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- E-Commerce Analytics -->
-                    <div class="project-card bg-white dark:bg-[#1a1f26] rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all hover:-translate-y-1 flex flex-col h-full"
-                        data-category="data" data-title="Indian E-Commerce Revenue Intelligence"
-                        data-desc="Comprehensive analysis of sales data and user behavior for an online retail platform to optimize marketing strategies and improve conversion."
-                        data-tags='["Python", "Pandas & NumPy", "Scikit-learn", "Sql", "Tableau"]'
-                        data-image="images/doodle_ecommerce.png"
-                        data-github="https://github.com/kesarjain3118/Indian-Ecommerce-Revenue-Intelligence"
-                        data-website="https://indian-ecommerce-revenue-intelligence.netlify.app/">
-
-                        <div class="relative h-48 sm:h-56">
-                            <img src="images/doodle_ecommerce.png" alt="Indian E-Commerce Revenue Intelligence"
-                                class="w-full h-full object-cover">
-                            <span
-                                class="absolute top-4 left-4 bg-black/60 text-white text-xs py-1 px-3 rounded-full backdrop-blur-sm">Data
-                                / Analytics</span>
-                        </div>
-
-                        <div class="p-6 flex flex-col gap-4 flex-grow">
-                            <h4 class="text-lg font-semibold text-[#2a2a2a] dark:text-[#e8e8e8] mb-1 line-clamp-1">
-                                Indian E-Commerce Revenue Intelligence</h4>
-                            <p class="text-sm text-[#666] dark:text-[#999] mb-2 line-clamp-2 flex-grow">
-                                Comprehensive analysis of sales data and user behavior for an online retail platform.
-                            </p>
-                            <div class="flex flex-wrap gap-2 mb-4">
-                                <span
-                                    class="px-3 py-1 bg-[#f0f0f0] dark:bg-[#252a31] text-[#666] dark:text-[#999] rounded-full text-xs">Python</span>
-                                <span
-                                    class="px-3 py-1 bg-[#f0f0f0] dark:bg-[#252a31] text-[#666] dark:text-[#999] rounded-full text-xs">Pandas
-                                    & NumPy</span>
-                                <span
-                                    class="px-3 py-1 bg-[#f0f0f0] dark:bg-[#252a31] text-[#666] dark:text-[#999] rounded-full text-xs">Scikit-learn</span>
-                                <span
-                                    class="px-3 py-1 bg-[#f0f0f0] dark:bg-[#252a31] text-[#666] dark:text-[#999] rounded-full text-xs">Sql</span>
-                                <span
-                                    class="px-3 py-1 bg-[#f0f0f0] dark:bg-[#252a31] text-[#666] dark:text-[#999] rounded-full text-xs">Tableau</span>
-                            </div>
-                            <div class="mt-auto">
-                                <button
-                                    class="open-modal-btn w-full px-4 py-2 border border-[#6b9bd1] text-[#6b9bd1] hover:bg-[#6b9bd1] hover:text-white rounded-lg font-medium text-sm text-center transition-all flex items-center justify-center gap-2">
-                                    View Details
-                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                            d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                                    </svg>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Jai Rajendra Jewellers -->
-                    <div class="project-card bg-white dark:bg-[#1a1f26] rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all hover:-translate-y-1 flex flex-col h-full"
-                        data-category="software" data-title="Jai Rajendra Jewellers"
-                        data-desc="Developed a custom inventory management and sales tracking system for a local jewelry business, including a user-friendly dashboard."
-                        data-tags='["HTML", "Tailwind CSS", "JavaScript", "Netlify"]'
-                        data-image="images/doodle_jewelry.png"
-                        data-github="https://github.com/kesarjain3118/jairajendrajewellers"
-                        data-website="https://jairajendrajewellerspdp11.netlify.app/">
-
-                        <div class="relative h-48 sm:h-56">
-                            <img src="images/doodle_jewelry.png" alt="Jai Rajendra Jewellers"
-                                class="w-full h-full object-cover">
-                            <span
-                                class="absolute top-4 left-4 bg-black/60 text-white text-xs py-1 px-3 rounded-full backdrop-blur-sm">Software
-                                / Web App</span>
-                        </div>
-
-                        <div class="p-6 flex flex-col gap-4 flex-grow">
-                            <h4 class="text-lg font-semibold text-[#2a2a2a] dark:text-[#e8e8e8] mb-1 line-clamp-1">Jai
-                                Rajendra Jewellers</h4>
-                            <p class="text-sm text-[#666] dark:text-[#999] mb-2 line-clamp-2 flex-grow">
-                                Developed a custom inventory management and sales tracking system for a local jewelry
-                                business.
-                            </p>
-                            <div class="flex flex-wrap gap-2 mb-4">
-                                <span
-                                    class="px-3 py-1 bg-[#f0f0f0] dark:bg-[#252a31] text-[#666] dark:text-[#999] rounded-full text-xs">HTML</span>
-                                <span
-                                    class="px-3 py-1 bg-[#f0f0f0] dark:bg-[#252a31] text-[#666] dark:text-[#999] rounded-full text-xs">Tailwind
-                                    CSS</span>
-                                <span
-                                    class="px-3 py-1 bg-[#f0f0f0] dark:bg-[#252a31] text-[#666] dark:text-[#999] rounded-full text-xs">JavaScript</span>
-                                <span
-                                    class="px-3 py-1 bg-[#f0f0f0] dark:bg-[#252a31] text-[#666] dark:text-[#999] rounded-full text-xs">Netlify</span>
-                            </div>
-                            <div class="mt-auto">
-                                <button
-                                    class="open-modal-btn w-full px-4 py-2 border border-[#6b9bd1] text-[#6b9bd1] hover:bg-[#6b9bd1] hover:text-white rounded-lg font-medium text-sm text-center transition-all flex items-center justify-center gap-2">
-                                    View Details
-                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                            d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                                    </svg>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Loan Approval Prediction -->
-                    <div class="project-card bg-white dark:bg-[#1a1f26] rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all hover:-translate-y-1 flex flex-col h-full"
-                        data-category="aiml" data-title="Loan Approval Prediction"
-                        data-desc="Built a machine learning model to predict loan approval probability based on applicant data, utilizing classification algorithms."
-                        data-tags='["Python", "Pandas", "Scikit-learn", "Machine Learning Models"]'
-                        data-image="images/doodle_loan.png" data-github="#"
-                        data-website="https://www.kaggle.com/code/kesarjain31/loan-approval">
-
-                        <div class="relative h-48 sm:h-56">
-                            <img src="images/doodle_loan.png" alt="Loan Approval Prediction"
-                                class="w-full h-full object-cover">
-                            <span
-                                class="absolute top-4 left-4 bg-black/60 text-white text-xs py-1 px-3 rounded-full backdrop-blur-sm">AI
-                                / ML</span>
-                        </div>
-
-                        <div class="p-6 flex flex-col gap-4 flex-grow">
-                            <h4 class="text-lg font-semibold text-[#2a2a2a] dark:text-[#e8e8e8] mb-1 line-clamp-1">Loan
-                                Approval Prediction</h4>
-                            <p class="text-sm text-[#666] dark:text-[#999] mb-2 line-clamp-2 flex-grow">
-                                Built a machine learning model to predict loan approval probability based on applicant
-                                data.
-                            </p>
-                            <div class="flex flex-wrap gap-2 mb-4">
-                                <span
-                                    class="px-3 py-1 bg-[#f0f0f0] dark:bg-[#252a31] text-[#666] dark:text-[#999] rounded-full text-xs">Python</span>
-                                <span
-                                    class="px-3 py-1 bg-[#f0f0f0] dark:bg-[#252a31] text-[#666] dark:text-[#999] rounded-full text-xs">Pandas</span>
-                                <span
-                                    class="px-3 py-1 bg-[#f0f0f0] dark:bg-[#252a31] text-[#666] dark:text-[#999] rounded-full text-xs">Scikit-learn</span>
-                                <span
-                                    class="px-3 py-1 bg-[#f0f0f0] dark:bg-[#252a31] text-[#666] dark:text-[#999] rounded-full text-xs">Machine
-                                    Learning Models</span>
-                            </div>
-                            <div class="mt-auto">
-                                <button
-                                    class="open-modal-btn w-full px-4 py-2 border border-[#6b9bd1] text-[#6b9bd1] hover:bg-[#6b9bd1] hover:text-white rounded-lg font-medium text-sm text-center transition-all flex items-center justify-center gap-2">
-                                    View Details
-                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                            d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                                    </svg>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Used Car Price Prediction -->
-                    <div class="project-card bg-white dark:bg-[#1a1f26] rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all hover:-translate-y-1 flex flex-col h-full"
-                        data-category="aiml" data-title="Used Car Price Prediction"
-                        data-desc="Developed a regression model to accurately predict the resale price of used vehicles using Python and various regression algorithms."
-                        data-tags='["Python", "Pandas", "Scikit-learn", "Matplotlib"]'
-                        data-image="images/doodle_car.png" data-github="#"
-                        data-website="http://kaggle.com/code/kesarjain31/used-cars">
-
-                        <div class="relative h-48 sm:h-56">
-                            <img src="images/doodle_car.png" alt="Used Car Price Prediction"
-                                class="w-full h-full object-cover">
-                            <span
-                                class="absolute top-4 left-4 bg-black/60 text-white text-xs py-1 px-3 rounded-full backdrop-blur-sm">AI
-                                / ML</span>
-                        </div>
-
-                        <div class="p-6 flex flex-col gap-4 flex-grow">
-                            <h4 class="text-lg font-semibold text-[#2a2a2a] dark:text-[#e8e8e8] mb-1 line-clamp-1">Used
-                                Car Price Prediction</h4>
-                            <p class="text-sm text-[#666] dark:text-[#999] mb-2 line-clamp-2 flex-grow">
-                                Developed a regression model to accurately predict the resale price of used vehicles.
-                            </p>
-                            <div class="flex flex-wrap gap-2 mb-4">
-                                <span
-                                    class="px-3 py-1 bg-[#f0f0f0] dark:bg-[#252a31] text-[#666] dark:text-[#999] rounded-full text-xs">Python</span>
-                                <span
-                                    class="px-3 py-1 bg-[#f0f0f0] dark:bg-[#252a31] text-[#666] dark:text-[#999] rounded-full text-xs">Pandas</span>
-                                <span
-                                    class="px-3 py-1 bg-[#f0f0f0] dark:bg-[#252a31] text-[#666] dark:text-[#999] rounded-full text-xs">Scikit-learn</span>
-                                <span
-                                    class="px-3 py-1 bg-[#f0f0f0] dark:bg-[#252a31] text-[#666] dark:text-[#999] rounded-full text-xs">Matplotlib</span>
-                            </div>
-                            <div class="mt-auto">
-                                <button
-                                    class="open-modal-btn w-full px-4 py-2 border border-[#6b9bd1] text-[#6b9bd1] hover:bg-[#6b9bd1] hover:text-white rounded-lg font-medium text-sm text-center transition-all flex items-center justify-center gap-2">
-                                    View Details
-                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                            d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                                    </svg>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Mall Customer Segmentation -->
-                    <div class="project-card bg-white dark:bg-[#1a1f26] rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all hover:-translate-y-1 flex flex-col h-full"
-                        data-category="aiml" data-title="Customer Segmentation using Clustering"
-                        data-desc="Implemented customer segmentation using clustering algorithms on shopping mall data to identify distinct customer groups."
-                        data-tags='["Python", "Pandas", "Scikit-learn", "Clustering Algorithms"]'
-                        data-image="images/doodle_mall.png" data-github="#"
-                        data-website="https://www.kaggle.com/code/kesarjain31/clustering">
-
-                        <div class="relative h-48 sm:h-56">
-                            <img src="images/doodle_mall.png" alt="Customer Segmentation using Clustering"
-                                class="w-full h-full object-cover">
-                            <span
-                                class="absolute top-4 left-4 bg-black/60 text-white text-xs py-1 px-3 rounded-full backdrop-blur-sm">AI
-                                / ML</span>
-                        </div>
-
-                        <div class="p-6 flex flex-col gap-4 flex-grow">
-                            <h4 class="text-lg font-semibold text-[#2a2a2a] dark:text-[#e8e8e8] mb-1 line-clamp-1">
-                                Customer
-                                Segmentation using Clustering</h4>
-                            <p class="text-sm text-[#666] dark:text-[#999] mb-2 line-clamp-2 flex-grow">
-                                Implemented customer segmentation using clustering algorithms on shopping mall data.
-                            </p>
-                            <div class="flex flex-wrap gap-2 mb-4">
-                                <span
-                                    class="px-3 py-1 bg-[#f0f0f0] dark:bg-[#252a31] text-[#666] dark:text-[#999] rounded-full text-xs">Python</span>
-                                <span
-                                    class="px-3 py-1 bg-[#f0f0f0] dark:bg-[#252a31] text-[#666] dark:text-[#999] rounded-full text-xs">Pandas</span>
-                                <span
-                                    class="px-3 py-1 bg-[#f0f0f0] dark:bg-[#252a31] text-[#666] dark:text-[#999] rounded-full text-xs">Scikit-learn</span>
-                                <span
-                                    class="px-3 py-1 bg-[#f0f0f0] dark:bg-[#252a31] text-[#666] dark:text-[#999] rounded-full text-xs">Clustering
-                                    Algorithms</span>
-                            </div>
-                            <div class="mt-auto">
-                                <button
-                                    class="open-modal-btn w-full px-4 py-2 border border-[#6b9bd1] text-[#6b9bd1] hover:bg-[#6b9bd1] hover:text-white rounded-lg font-medium text-sm text-center transition-all flex items-center justify-center gap-2">
-                                    View Details
-                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                            d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                                    </svg>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Unitext AI Tool -->
-                    <div class="project-card bg-white dark:bg-[#1a1f26] rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all hover:-translate-y-1 flex flex-col h-full"
-                        data-category="aiml" data-title="Unitext – AI Text Summarizer"
-                        data-desc="Created a text summarization and sentiment analysis tool using natural language processing techniques, capable of processing large volumes."
-                        data-tags='["Python", "NLP (Transformers)", "Hugging Face", "Gradio"]'
-                        data-image="images/doodle_unitext.png" data-github="https://github.com/kesarjain3118/Unitext"
-                        data-website="https://huggingface.co/spaces/kesarj/ai-summarizer-with-asl">
-
-                        <div class="relative h-48 sm:h-56">
-                            <img src="images/doodle_unitext.png" alt="Unitext – AI Text Summarizer"
-                                class="w-full h-full object-cover">
-                            <span
-                                class="absolute top-4 left-4 bg-black/60 text-white text-xs py-1 px-3 rounded-full backdrop-blur-sm">AI
-                                / ML</span>
-                        </div>
-
-                        <div class="p-6 flex flex-col gap-4 flex-grow">
-                            <h4 class="text-lg font-semibold text-[#2a2a2a] dark:text-[#e8e8e8] mb-1 line-clamp-1">
-                                Unitext – AI Text Summarizer</h4>
-                            <p class="text-sm text-[#666] dark:text-[#999] mb-2 line-clamp-2 flex-grow">
-                                Created a text summarization and sentiment analysis tool using NLP techniques.
-                            </p>
-                            <div class="flex flex-wrap gap-2 mb-4">
-                                <span
-                                    class="px-3 py-1 bg-[#f0f0f0] dark:bg-[#252a31] text-[#666] dark:text-[#999] rounded-full text-xs">Python</span>
-                                <span
-                                    class="px-3 py-1 bg-[#f0f0f0] dark:bg-[#252a31] text-[#666] dark:text-[#999] rounded-full text-xs">NLP
-                                    (Transformers)</span>
-                                <span
-                                    class="px-3 py-1 bg-[#f0f0f0] dark:bg-[#252a31] text-[#666] dark:text-[#999] rounded-full text-xs">Hugging
-                                    Face</span>
-                                <span
-                                    class="px-3 py-1 bg-[#f0f0f0] dark:bg-[#252a31] text-[#666] dark:text-[#999] rounded-full text-xs">Gradio</span>
-                            </div>
-                            <div class="mt-auto">
-                                <button
-                                    class="open-modal-btn w-full px-4 py-2 border border-[#6b9bd1] text-[#6b9bd1] hover:bg-[#6b9bd1] hover:text-white rounded-lg font-medium text-sm text-center transition-all flex items-center justify-center gap-2">
-                                    View Details
-                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                            d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                                    </svg>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- UTM Simulator -->
-                    <div class="project-card bg-white dark:bg-[#1a1f26] rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all hover:-translate-y-1 flex flex-col h-full"
-                        data-category="systems" data-title="Universal Turing Machine Simulator"
-                        data-desc="Designed and simulated a Universal Turing Machine to demonstrate the fundamental principles of computation and algorithms."
-                        data-tags='["HTML", "CSS", "JavaScript", "DOM Manipulation"]' data-image="images/doodle_utm.png"
-                        data-github="https://github.com/kesarjain3118/univeral-turing-machine-stimulator"
-                        data-website="https://kesarjain3118.github.io/univeral-turing-machine-stimulator/">
-
-                        <div class="relative h-48 sm:h-56">
-                            <img src="images/doodle_utm.png" alt="Universal Turing Machine Simulator"
-                                class="w-full h-full object-cover">
-                            <span
-                                class="absolute top-4 left-4 bg-black/60 text-white text-xs py-1 px-3 rounded-full backdrop-blur-sm">Systems
-                                / IoT</span>
-                        </div>
-
-                        <div class="p-6 flex flex-col gap-4 flex-grow">
-                            <h4 class="text-lg font-semibold text-[#2a2a2a] dark:text-[#e8e8e8] mb-1 line-clamp-1">
-                                Universal Turing Machine Simulator</h4>
-                            <p class="text-sm text-[#666] dark:text-[#999] mb-2 line-clamp-2 flex-grow">
-                                Designed and simulated a Universal Turing Machine to demonstrate the fundamental
-                                principles of computation.
-                            </p>
-                            <div class="flex flex-wrap gap-2 mb-4">
-                                <span
-                                    class="px-3 py-1 bg-[#f0f0f0] dark:bg-[#252a31] text-[#666] dark:text-[#999] rounded-full text-xs">HTML</span>
-                                <span
-                                    class="px-3 py-1 bg-[#f0f0f0] dark:bg-[#252a31] text-[#666] dark:text-[#999] rounded-full text-xs">CSS</span>
-                                <span
-                                    class="px-3 py-1 bg-[#f0f0f0] dark:bg-[#252a31] text-[#666] dark:text-[#999] rounded-full text-xs">JavaScript</span>
-                                <span
-                                    class="px-3 py-1 bg-[#f0f0f0] dark:bg-[#252a31] text-[#666] dark:text-[#999] rounded-full text-xs">DOM
-                                    Manipulation</span>
-                            </div>
-                            <div class="mt-auto">
-                                <button
-                                    class="open-modal-btn w-full px-4 py-2 border border-[#6b9bd1] text-[#6b9bd1] hover:bg-[#6b9bd1] hover:text-white rounded-lg font-medium text-sm text-center transition-all flex items-center justify-center gap-2">
-                                    View Details
-                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                            d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                                    </svg>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Road Safety System -->
-                    <div class="project-card bg-white dark:bg-[#1a1f26] rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all hover:-translate-y-1 flex flex-col h-full"
-                        data-category="systems" data-title="Road Safety System"
-                        data-desc="Implemented V2V communication with IoT sensors for accident prevention and smart traffic monitoring in collaboration with team."
-                        data-tags='["IoT", "V2V", "Sensors", "Hardware"]' data-image="images/doodle_roadsafety.png"
-                        data-github="#"
-                        data-website="https://www.linkedin.com/posts/kesar-jain-576474289_mentorship-collaboration-teamwork-activity-7197261003800076289-z8IT">
-
-                        <div class="relative h-48 sm:h-56">
-                            <img src="images/doodle_roadsafety.png" alt="Road Safety System"
-                                class="w-full h-full object-cover">
-                            <span
-                                class="absolute top-4 left-4 bg-black/60 text-white text-xs py-1 px-3 rounded-full backdrop-blur-sm">Systems
-                                / IoT</span>
-                        </div>
-
-                        <div class="p-6 flex flex-col gap-4 flex-grow">
-                            <h4 class="text-lg font-semibold text-[#2a2a2a] dark:text-[#e8e8e8] mb-1 line-clamp-1">Road
-                                Safety System</h4>
-                            <p class="text-sm text-[#666] dark:text-[#999] mb-2 line-clamp-2 flex-grow">
-                                Implemented V2V communication with IoT sensors for accident prevention and smart traffic
-                                monitoring.
-                            </p>
-                            <div class="flex flex-wrap gap-2 mb-4">
-                                <span
-                                    class="px-3 py-1 bg-[#f0f0f0] dark:bg-[#252a31] text-[#666] dark:text-[#999] rounded-full text-xs">IoT</span>
-                                <span
-                                    class="px-3 py-1 bg-[#f0f0f0] dark:bg-[#252a31] text-[#666] dark:text-[#999] rounded-full text-xs">V2V</span>
-                            </div>
-                            <div class="mt-auto">
-                                <button
-                                    class="open-modal-btn w-full px-4 py-2 border border-[#6b9bd1] text-[#6b9bd1] hover:bg-[#6b9bd1] hover:text-white rounded-lg font-medium text-sm text-center transition-all flex items-center justify-center gap-2">
-                                    View Details
-                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                            d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                                    </svg>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-
-
-                    <!-- Satellite Hybrid Pathfinding Simulation -->
-                    <div class="project-card bg-white dark:bg-[#1a1f26] rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all hover:-translate-y-1 flex flex-col h-full"
-                        data-category="aiml" data-title="Multi-Agent System using MESA Framework"
-                        data-desc="Designed a multi-agent system to navigate dynamic environments using hybrid pathfinding algorithms."
-                        data-tags='["Python", "MESA Framework", "NumPy", "Matplotlib"]'
-                        data-image="images/doodle_pathfinding.png"
-                        data-github="https://github.com/kesarjain3118/Multi-Agents-System-using-MESA-Framework"
-                        data-website="#">
-
-                        <div class="relative h-48 sm:h-56">
-                            <img src="images/doodle_pathfinding.png" alt="Multi-Agent System using MESA Framework"
-                                class="w-full h-full object-cover">
-                            <span
-                                class="absolute top-4 left-4 bg-black/60 text-white text-xs py-1 px-3 rounded-full backdrop-blur-sm">AI
-                                / Simulation</span>
-                        </div>
-
-                        <div class="p-6 flex flex-col gap-4 flex-grow">
-                            <h4 class="text-lg font-semibold text-[#2a2a2a] dark:text-[#e8e8e8] mb-1 line-clamp-1">
-                                Multi-Agent System using MESA Framework</h4>
-                            <p class="text-sm text-[#666] dark:text-[#999] mb-2 line-clamp-2 flex-grow">
-                                Designed a multi-agent system to navigate dynamic environments using hybrid pathfinding
-                                algorithms.
-                            </p>
-                            <div class="flex flex-wrap gap-2 mb-4">
-                                <span
-                                    class="px-3 py-1 bg-[#f0f0f0] dark:bg-[#252a31] text-[#666] dark:text-[#999] rounded-full text-xs">Python</span>
-                                <span
-                                    class="px-3 py-1 bg-[#f0f0f0] dark:bg-[#252a31] text-[#666] dark:text-[#999] rounded-full text-xs">MESA
-                                    Framework</span>
-                                <span
-                                    class="px-3 py-1 bg-[#f0f0f0] dark:bg-[#252a31] text-[#666] dark:text-[#999] rounded-full text-xs">NumPy</span>
-                                <span
-                                    class="px-3 py-1 bg-[#f0f0f0] dark:bg-[#252a31] text-[#666] dark:text-[#999] rounded-full text-xs">Matplotlib</span>
-                            </div>
-                            <div class="mt-auto">
-                                <button
-                                    class="open-modal-btn w-full px-4 py-2 border border-[#6b9bd1] text-[#6b9bd1] hover:bg-[#6b9bd1] hover:text-white rounded-lg font-medium text-sm text-center transition-all flex items-center justify-center gap-2">
-                                    View Details
-                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                            d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                                    </svg>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- SmartHire AI Resume Checker -->
-                    <div class="project-card bg-white dark:bg-[#1a1f26] rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all hover:-translate-y-1 flex flex-col h-full"
-                        data-category="aiml" data-title="SmartHire - AI Resume Checker"
-                        data-desc="AI-powered recruitment platform streamlining hiring with resume analysis, automated screening, and intelligent candidate matching."
-                        data-tags='["React", "Tailwind CSS", "Supabase", "AI", "Full Stack"]'
-                        data-image="images/doodle_smarthire.png"
-                        data-github="https://github.com/kesarjain3118/smart-hire-ai" data-website="#">
-
-                        <div class="relative h-48 sm:h-56">
-                            <img src="images/doodle_smarthire.png" alt="SmartHire AI"
-                                class="w-full h-full object-cover">
-                            <span
-                                class="absolute top-4 left-4 bg-black/60 text-white text-xs py-1 px-3 rounded-full backdrop-blur-sm">AI
-                                / ML</span>
-                        </div>
-
-                        <div class="p-6 flex flex-col gap-4 flex-grow">
-                            <h4 class="text-lg font-semibold text-[#2a2a2a] dark:text-[#e8e8e8] mb-1 line-clamp-1">
-                                SmartHire - AI Resume Checker</h4>
-                            <p class="text-sm text-[#666] dark:text-[#999] mb-2 line-clamp-2 flex-grow">
-                                AI-powered recruitment platform streamlining hiring with resume analysis.
-                            </p>
-                            <div class="flex flex-wrap gap-2 mb-4">
-                                <span
-                                    class="px-3 py-1 bg-[#f0f0f0] dark:bg-[#252a31] text-[#666] dark:text-[#999] rounded-full text-xs">React</span>
-                                <span
-                                    class="px-3 py-1 bg-[#f0f0f0] dark:bg-[#252a31] text-[#666] dark:text-[#999] rounded-full text-xs">Tailwind
-                                    CSS</span>
-                            </div>
-                            <div class="mt-auto">
-                                <button
-                                    class="open-modal-btn w-full px-4 py-2 border border-[#6b9bd1] text-[#6b9bd1] hover:bg-[#6b9bd1] hover:text-white rounded-lg font-medium text-sm text-center transition-all flex items-center justify-center gap-2">
-                                    View Details
-                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                            d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                                    </svg>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Bottom decorative doodles and stickers -->
-                    <svg class="absolute bottom-16 left-12 w-12 h-12 text-[#6b9bd1] opacity-15" viewBox="0 0 50 50"
-                        fill="none" stroke="currentColor" stroke-width="1.5">
-                        <path d="M10 25 L 15 20 L 20 25 L 15 30 Z" stroke-linecap="round" stroke-linejoin="round" />
-                    </svg>
-                    <svg class="absolute bottom-20 right-16 w-8 h-8 text-[#6b9bd1] opacity-15" viewBox="0 0 50 50"
-                        fill="none" stroke="currentColor" stroke-width="1.5">
-                        <circle cx="25" cy="25" r="8" />
-                        <circle cx="25" cy="25" r="3" fill="currentColor" />
-                    </svg>
-                    <!-- Trophy sticker -->
-                    <svg class="absolute bottom-10 left-1/4 w-7 h-7 text-[#ffd700] opacity-35" viewBox="0 0 24 24"
-                        fill="currentColor">
-                        <path
-                            d="M12 2c.828 0 1.5.672 1.5 1.5V5h3c.828 0 1.5.672 1.5 1.5V8c0 1.933-1.12 3.6-2.738 4.402A3.5 3.5 0 0 1 12 15.5a3.5 3.5 0 0 1-3.262-3.098C6.12 11.6 5 9.933 5 8V6.5C5 5.672 5.672 5 6.5 5h3V3.5c0-.828.672-1.5 1.5-1.5zm0 15.5c.828 0 1.5.672 1.5 1.5V21h3v2H7.5v-2h3v-2c0-.828.672-1.5 1.5-1.5z" />
-                    </svg>
-                    <!-- Arrow pointing up -->
-                    <svg class="absolute bottom-32 right-1/4 w-6 h-10 text-[#6b9bd1] opacity-30" viewBox="0 0 24 24"
-                        fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M12 19V5M5 12l7-7 7 7" stroke-linecap="round" stroke-linejoin="round" />
-                    </svg>
-                    <!-- Smiley face sticker -->
-                    <svg class="absolute bottom-24 left-20 w-6 h-6 text-[#6b9bd1] opacity-30" viewBox="0 0 24 24"
-                        fill="none" stroke="currentColor" stroke-width="1.5">
-                        <circle cx="12" cy="12" r="10" />
-                        <circle cx="9" cy="9" r="1" fill="currentColor" />
-                        <circle cx="15" cy="9" r="1" fill="currentColor" />
-                        <path d="M8 14s1.5 2 4 2 4-2 4-2" stroke-linecap="round" />
-                    </svg>
-                    <!-- Rocket sticker -->
-                    <svg class="absolute bottom-40 right-12 w-7 h-7 text-[#ff6b9d] opacity-35" viewBox="0 0 24 24"
-                        fill="currentColor">
-                        <path
-                            d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z" />
-                    </svg>
-                    <!-- Coffee cup sticker -->
-                    <svg class="absolute bottom-16 right-1/3 w-6 h-6 text-[#8b6f47] opacity-35" viewBox="0 0 24 24"
-                        fill="none" stroke="currentColor" stroke-width="1.5">
-                        <path d="M17 8h1a4 4 0 1 1 0 8h-1M3 8h14v9a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4V8zM6 1v3M10 1v3M14 1v3"
-                            stroke-linecap="round" stroke-linejoin="round" />
-                    </svg>
-                </div>
-        </section>
-
-
-
-        <!-- Skills Section -->
-        <section id="skills" class="py-20 px-4 bg-white/50 dark:bg-[#0a0e13]">
-            <div class="container mx-auto max-w-6xl">
-                <div class="text-center mb-16">
-                    <h2 class="text-4xl md:text-5xl font-serif font-bold mb-4">Skills</h2>
-                    <p class="text-lg text-[#4a4a4a] dark:text-[#b0b0b0]">Technologies and tools I work with</p>
-                </div>
-
-                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <!-- 1. Programming Languages -->
-                    <div class="bg-white dark:bg-[#1a1f26] rounded-2xl p-6 hover-lift skills-card">
-                        <p class="text-3xl mb-4">💻</p>
-                        <h3 class="text-xl font-bold mb-4">Programming Languages</h3>
-                        <ul class="space-y-2 text-[#4a4a4a] dark:text-[#b0b0b0]">
-                            <li>Python</li>
-                            <li>C++</li>
-                            <li>Java</li>
-                            <li>JavaScript</li>
-                            <li>SQL</li>
-                        </ul>
-                    </div>
-
-                    <!-- 2. AI & Data Science -->
-                    <div class="bg-white dark:bg-[#1a1f26] rounded-2xl p-6 hover-lift skills-card">
-                        <p class="text-3xl mb-4">🤖</p>
-                        <h3 class="text-xl font-bold mb-4">AI & Data Science</h3>
-                        <ul class="space-y-2 text-[#4a4a4a] dark:text-[#b0b0b0]">
-                            <li>TensorFlow & Scikit-learn</li>
-                            <li>NLP & Transformers</li>
-                            <li>Pandas & NumPy</li>
-                            <li>Machine Learning</li>
-                        </ul>
-                    </div>
-
-                    <!-- 3. Web & Databases -->
-                    <div class="bg-white dark:bg-[#1a1f26] rounded-2xl p-6 hover-lift skills-card">
-                        <p class="text-3xl mb-4">🌐</p>
-                        <h3 class="text-xl font-bold mb-4">Web & Databases</h3>
-                        <ul class="space-y-2 text-[#4a4a4a] dark:text-[#b0b0b0]">
-                            <li>HTML/CSS & Tailwind</li>
-                            <li>MongoDB & NoSQL</li>
-                            <li>MySQL</li>
-                            <li>Data Pipelines</li>
-                        </ul>
-                    </div>
-
-                    <!-- 4. Tools & Platforms -->
-                    <div class="bg-white dark:bg-[#1a1f26] rounded-2xl p-6 hover-lift skills-card">
-                        <p class="text-3xl mb-4">🛠️</p>
-                        <h3 class="text-xl font-bold mb-4">Tools & Platforms</h3>
-                        <ul class="space-y-2 text-[#4a4a4a] dark:text-[#b0b0b0]">
-                            <li>Git & GitHub</li>
-                            <li>Docker</li>
-                            <li>VS Code</li>
-                            <li>Linux / Unix</li>
-                        </ul>
-                    </div>
-
-                    <!-- 5. CS Fundamentals -->
-                    <div class="bg-white dark:bg-[#1a1f26] rounded-2xl p-6 hover-lift skills-card">
-                        <p class="text-3xl mb-4">📚</p>
-                        <h3 class="text-xl font-bold mb-4">CS Fundamentals</h3>
-                        <ul class="space-y-2 text-[#4a4a4a] dark:text-[#b0b0b0]">
-                            <li>Data Structures (DSA)</li>
-                            <li>Object-Oriented Programming (OOP)</li>
-                            <li>DBMS & Operating Systems</li>
-                            <li>Computer Networks</li>
-                        </ul>
-                    </div>
-
-                    <!-- 6. Professional Skills -->
-                    <div class="bg-white dark:bg-[#1a1f26] rounded-2xl p-6 hover-lift skills-card">
-                        <p class="text-3xl mb-4">🤝</p>
-                        <h3 class="text-xl font-bold mb-4">Professional Skills</h3>
-                        <ul class="space-y-2 text-[#4a4a4a] dark:text-[#b0b0b0]">
-                            <li>Communication</li>
-                            <li>Logical Thinking</li>
-                            <li>Ethics</li>
-                            <li>Responsible Leadership</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Certifications Section -->
-        <section id="certifications" class="py-20 px-4">
-            <div class="container mx-auto max-w-6xl">
-                <div class="text-center mb-16">
-                    <h2 class="text-4xl md:text-5xl font-serif font-bold mb-4">Certifications</h2>
-                    <p class="text-lg text-[#4a4a4a] dark:text-[#b0b0b0]">Professional certifications and courses
-                        completed</p>
-                </div>
-
-                <div class="mb-12">
-                    <h3
-                        class="text-2xl font-bold mb-6 text-accent-blue/80 dark:text-accent-blue/80 border-b border-gray-200 dark:border-gray-700 pb-2">
-                        Industry Certifications</h3>
-                    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                        <!-- Accenture -->
-                        <div
-                            class="bg-white dark:bg-[#1a1f26] rounded-2xl p-6 hover-lift border-l-4 border-accent-orange">
-                            <h4 class="font-bold mb-2 line-clamp-2">Accenture Nordics - Software Engineering Job
-                                Simulation</h4>
-                            <p class="text-accent-blue text-sm mb-1">Forage</p>
-                            <p class="text-xs text-[#666] dark:text-[#999]">Issued Jan 2025 • Credential:
-                                kMdCAXJkPrAQGHCcq</p>
-                        </div>
-
-                        <!-- DeepLearning.AI -->
-                        <div class="bg-white dark:bg-[#1a1f26] rounded-2xl p-6 hover-lift">
-                            <h4 class="font-bold mb-2 line-clamp-2">Introduction to TensorFlow for AI, ML, and Deep
-                                Learning</h4>
-                            <p class="text-accent-blue text-sm">DeepLearning.AI</p>
-                        </div>
-
-                        <!-- DeepLearning.AI -->
-                        <div class="bg-white dark:bg-[#1a1f26] rounded-2xl p-6 hover-lift">
-                            <h4 class="font-bold mb-2 line-clamp-2">Probability & Statistics for Machine Learning & Data
-                                Science</h4>
-                            <p class="text-accent-blue text-sm">DeepLearning.AI</p>
-                        </div>
-
-                        <!-- Google -->
-                        <div class="bg-white dark:bg-[#1a1f26] rounded-2xl p-6 hover-lift">
-                            <h4 class="font-bold mb-2 line-clamp-2">Crash Course on Python</h4>
-                            <p class="text-accent-blue text-sm">Google</p>
-                        </div>
-
-                        <!-- Microsoft -->
-                        <div class="bg-white dark:bg-[#1a1f26] rounded-2xl p-6 hover-lift">
-                            <h4 class="font-bold mb-2 line-clamp-2">Working Smarter with Microsoft Excel</h4>
-                            <p class="text-accent-blue text-sm">Microsoft</p>
-                        </div>
-
-                        <!-- IBM -->
-                        <div class="bg-white dark:bg-[#1a1f26] rounded-2xl p-6 hover-lift">
-                            <h4 class="font-bold mb-2 line-clamp-2">Introduction to NoSQL Databases</h4>
-                            <p class="text-accent-blue text-sm">IBM</p>
-                        </div>
-
-                        <!-- Cisco -->
-                        <div class="bg-white dark:bg-[#1a1f26] rounded-2xl p-6 hover-lift">
-                            <h4 class="font-bold mb-2 line-clamp-2">Network Security</h4>
-                            <p class="text-accent-blue text-sm">Cisco</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div>
-                    <h3
-                        class="text-2xl font-bold mb-6 text-accent-blue/80 dark:text-accent-blue/80 border-b border-gray-200 dark:border-gray-700 pb-2">
-                        Academic Certifications</h3>
-                    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-                        <!-- UCSD -->
-                        <div class="bg-white dark:bg-[#1a1f26] rounded-2xl p-6 hover-lift">
-                            <h4 class="font-bold mb-2 line-clamp-2">Introduction to Operating Systems (Specialization)
-                            </h4>
-                            <p class="text-accent-blue text-sm">Codio & UCSD</p>
-                        </div>
-
-                        <div class="bg-white dark:bg-[#1a1f26] rounded-2xl p-6 hover-lift">
-                            <h4 class="font-bold mb-2 line-clamp-2">Algorithmic Toolbox</h4>
-                            <p class="text-accent-blue text-sm">UC San Diego</p>
-                        </div>
-
-                        <!-- UCI -->
-                        <div class="bg-white dark:bg-[#1a1f26] rounded-2xl p-6 hover-lift">
-                            <h4 class="font-bold mb-2 line-clamp-2">Introduction to IoT and Embedded Systems</h4>
-                            <p class="text-accent-blue text-sm">UC Irvine</p>
-                        </div>
-
-                        <div class="bg-white dark:bg-[#1a1f26] rounded-2xl p-6 hover-lift">
-                            <h4 class="font-bold mb-2 line-clamp-2">Emergent Phenomena in Science and Everyday Life</h4>
-                            <p class="text-accent-blue text-sm">UC Irvine</p>
-                        </div>
-
-                        <!-- Arizona -->
-                        <div class="bg-white dark:bg-[#1a1f26] rounded-2xl p-6 hover-lift">
-                            <h4 class="font-bold mb-2 line-clamp-2">Lithium Based Batteries</h4>
-                            <p class="text-accent-blue text-sm">Arizona State University</p>
-                        </div>
-
-                        <!-- Georgia Tech -->
-                        <div class="bg-white dark:bg-[#1a1f26] rounded-2xl p-6 hover-lift">
-                            <h4 class="font-bold mb-2 line-clamp-2">Write Professional Emails in English</h4>
-                            <p class="text-accent-blue text-sm">Georgia Tech</p>
-                        </div>
-
-                        <!-- Shanghai -->
-                        <div class="bg-white dark:bg-[#1a1f26] rounded-2xl p-6 hover-lift">
-                            <h4 class="font-bold mb-2 line-clamp-2">Discrete Mathematics</h4>
-                            <p class="text-accent-blue text-sm">Shanghai Jiao Tong</p>
-                        </div>
-
-                        <!-- HKUST -->
-                        <div class="bg-white dark:bg-[#1a1f26] rounded-2xl p-6 hover-lift">
-                            <h4 class="font-bold mb-2 line-clamp-2">Matrix Algebra for Engineers</h4>
-                            <p class="text-accent-blue text-sm">HKUST</p>
-                        </div>
-
-                        <!-- Colorado -->
-                        <div class="bg-white dark:bg-[#1a1f26] rounded-2xl p-6 hover-lift">
-                            <h4 class="font-bold mb-2 line-clamp-2">Database Management Essentials</h4>
-                            <p class="text-accent-blue text-sm">Univ. of Colorado</p>
-                        </div>
-
-                        <!-- LearnQuest -->
-                        <div class="bg-white dark:bg-[#1a1f26] rounded-2xl p-6 hover-lift">
-                            <h4 class="font-bold mb-2 line-clamp-2">Core Java Specialization</h4>
-                            <p class="text-accent-blue text-sm">LearnQuest</p>
-                        </div>
-                    </div>
-                </div>
-        </section>
-
-
-
-        <!-- Contact Section -->
-        <section id="contact" class="py-20 px-4 bg-white/50 dark:bg-[#0a0e13]">
-            <div class="container mx-auto max-w-6xl">
-                <div class="text-center mb-16">
-                    <h2 class="text-4xl md:text-5xl font-serif font-bold mb-4">Contact</h2>
-                    <p class="text-lg text-[#4a4a4a] dark:text-[#b0b0b0]">Let's connect and build something amazing
-                        together</p>
-                </div>
-
-                <div class="grid md:grid-cols-2 gap-8">
-                    <div class="space-y-6">
-                        <div class="bg-white dark:bg-[#1a1f26] rounded-2xl p-6 hover-lift">
-                            <p class="text-3xl mb-2">📧</p>
-                            <h3 class="font-bold mb-2">Email</h3>
-                            <a href="mailto:jainkesar477@gmail.com?subject=Let's%20Work%20Together"
-                                class="text-accent-blue hover:underline">jainkesar477@gmail.com</a>
-                        </div>
-
-
-
-                        <div class="flex gap-4">
-                            <a href="https://github.com/kesarjain3118" target="_blank"
-                                class="flex-1 bg-white dark:bg-[#1a1f26] rounded-2xl p-6 hover-lift text-center">
-                                <p class="text-3xl mb-2">💻</p>
-                                <p class="font-bold">GitHub</p>
-                            </a>
-                            <a href="https://www.linkedin.com/in/kesar-jain-576474289" target="_blank"
-                                class="flex-1 bg-white dark:bg-[#1a1f26] rounded-2xl p-6 hover-lift text-center">
-                                <p class="text-3xl mb-2">💼</p>
-                                <p class="font-bold">LinkedIn</p>
-                            </a>
-                        </div>
-                    </div>
-
-                    <div
-                        class="bg-gradient-to-br from-accent-orange to-red-600 text-white rounded-3xl p-8 md:p-12 flex flex-col justify-center hover-lift">
-                        <h3 class="text-3xl font-bold mb-4">Let's Work Together</h3>
-                        <p class="text-lg mb-6">I'm always interested in hearing about new projects and opportunities.
-                            Feel free to reach out!</p>
-                        <a href="mailto:jainkesar477@gmail.com?subject=Let's%20Work%20Together&body=Hi%20Kesar,%0A%0AI'd%20like%20to%20connect%20with%20you."
-                            class="inline-block px-8 py-3 bg-white text-accent-orange rounded-full font-semibold hover:bg-opacity-90 transition-opacity text-center mb-4">
-                            Let's Work Together
-                        </a>
-                        <p class="text-sm text-white/90 text-center">
-                            or copy: <strong>jainkesar477@gmail.com</strong>
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <!-- Footer -->
-    <footer class="py-12 px-4 border-t border-[#1a1a1a]/10 dark:border-white/10">
+    <!-- WORK SECTION -->
+    <section id="work" class="py-20 px-4 bg-[#f5f5f5] dark:bg-[#0a0e13]">
         <div class="container mx-auto max-w-6xl">
-            <div class="grid md:grid-cols-3 gap-8 text-center md:text-left">
-                <p class="text-2xl font-serif font-bold mb-2">Kesar Jain</p>
-            </div>
-            <div class="flex items-center justify-center">
-                <p class="text-[#6a6a6a] dark:text-[#808080]">© 2025 Kesar Jain. All rights reserved.</p>
-            </div>
-            <div class="flex items-center justify-center md:justify-end">
-                <p class="text-[#6a6a6a] dark:text-[#808080]">Built with passion & code</p>
+
+            <h2 class="text-5xl font-bold text-center mb-12">Work</h2>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+                <!-- Power BI Project -->
+                <div class="project-card bg-white dark:bg-[#1a1f26] rounded-xl overflow-hidden flex flex-col"
+                    data-category="data"
+                    data-title="E-commerce Sales Dashboard (Power BI)"
+                    data-desc="Interactive Power BI dashboard analyzing sales performance, customer behavior, profit trends, and regional insights using real-world e-commerce data."
+                    data-tags='["Power BI Desktop", "DAX", "Excel / CSV"]'
+                    data-image="images/doodle_ecommerce.png"
+                    data-github="https://github.com/kesarjain3118/powerbi-ecommerce-dashboard"
+                    data-website="#">
+
+                    <img src="images/doodle_ecommerce.png" class="h-52 w-full object-cover">
+
+                    <div class="p-6 flex flex-col gap-4 flex-grow">
+                        <h3 class="font-semibold text-lg">E-commerce Sales Dashboard (Power BI)</h3>
+                        <p class="text-sm text-gray-500 dark:text-gray-400 flex-grow">
+                            Interactive Power BI dashboard visualizing sales, profit and customer insights.
+                        </p>
+
+                        <button
+                            class="open-modal-btn mt-auto border border-blue-500 text-blue-500 hover:bg-blue-500 hover:text-white rounded-lg py-2 transition">
+                            View Details
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Velocity Mart – Dataverse Hackathon -->
+                <div class="project-card bg-white dark:bg-[#1a1f26] rounded-xl overflow-hidden flex flex-col"
+                    data-category="data"
+                    data-title="Velocity Mart – Dataverse Hackathon Project"
+                    data-desc="Built during a Dataverse Hackathon, Velocity Mart is a data-driven retail analytics system focused on structured data modeling, sales tracking, and business intelligence."
+                    data-tags='["Dataverse", "Data Modeling", "Analytics", "Hackathon"]'
+                    data-image="images/doodle_ecommerce.png"
+                    data-github="https://github.com/kesarjain3118/Velocity-Mart"
+                    data-website="#">
+
+                    <img src="images/doodle_ecommerce.png" class="h-52 w-full object-cover">
+
+                    <div class="p-6 flex flex-col gap-4 flex-grow">
+                        <h3 class="font-semibold text-lg">Velocity Mart – Dataverse Hackathon</h3>
+                        <p class="text-sm text-gray-500 dark:text-gray-400 flex-grow">
+                            Retail analytics system built during a Dataverse Hackathon using structured data models.
+                        </p>
+
+                        <button
+                            class="open-modal-btn mt-auto border border-blue-500 text-blue-500 hover:bg-blue-500 hover:text-white rounded-lg py-2 transition">
+                            View Details
+                        </button>
+                    </div>
+                </div>
+
             </div>
         </div>
-        </div>
-    </footer>
+    </section>
 
-    <script>
-        // Theme Toggle
-        const html = document.documentElement;
-        const themeToggle = document.getElementById('themeToggle');
-        const mobileThemeToggle = document.getElementById('mobileThemeToggle');
-
-        // Check for saved theme preference or default to light mode
-        const currentTheme = localStorage.getItem('theme') || 'light';
-        if (currentTheme === 'dark') {
-            html.classList.add('dark');
-        }
-
-        function toggleTheme() {
-            html.classList.toggle('dark');
-            const newTheme = html.classList.contains('dark') ? 'dark' : 'light';
-            localStorage.setItem('theme', newTheme);
-        }
-
-        themeToggle.addEventListener('click', toggleTheme);
-        mobileThemeToggle.addEventListener('click', toggleTheme);
-
-        // Mobile Menu Toggle
-        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-        const mobileMenu = document.getElementById('mobileMenu');
-
-        mobileMenuBtn.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-        });
-
-        // Close mobile menu when clicking on a link
-        const mobileMenuLinks = mobileMenu.querySelectorAll('a');
-        mobileMenuLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                mobileMenu.classList.add('hidden');
-            });
-        });
-
-        // Intersection Observer for fade-in animations
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('fade-in');
-                    observer.unobserve(entry.target);
-                }
-            });
-        }, observerOptions);
-
-        // Observe all sections
-        document.querySelectorAll('section').forEach(section => {
-            observer.observe(section);
-        });
-
-        // Category filter functionality
-        const categoryFilters = document.querySelectorAll('.category-filter');
-        const projectCards = document.querySelectorAll('.project-card');
-
-        categoryFilters.forEach(filter => {
-            filter.addEventListener('click', () => {
-                const category = filter.dataset.category;
-
-                // Update active state
-                categoryFilters.forEach(btn => {
-                    btn.classList.remove('active', 'bg-[#6b9bd1]', 'text-white');
-                    btn.classList.add('bg-white', 'dark:bg-[#1a1f26]', 'text-[#666]', 'dark:text-[#999]');
-                });
-                filter.classList.add('active', 'bg-[#6b9bd1]', 'text-white');
-                filter.classList.remove('bg-white', 'dark:bg-[#1a1f26]', 'text-[#666]', 'dark:text-[#999]');
-
-                // Filter projects with fade animation
-                projectCards.forEach(card => {
-                    if (category === 'all' || card.dataset.category === category) {
-                        card.style.display = 'flex';
-                        setTimeout(() => {
-                            card.style.opacity = '1';
-                            card.style.transform = 'translateY(0)';
-                        }, 10);
-                    } else {
-                        card.style.opacity = '0';
-                        card.style.transform = 'translateY(10px)';
-                        setTimeout(() => {
-                            card.style.display = 'none';
-                        }, 300);
-                    }
-                });
-            });
-        });
-
-        // Initialize project cards with transition
-        projectCards.forEach(card => {
-            card.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
-        });
-    </script>
-
-    <!-- Project Modal -->
+    <!-- MODAL -->
     <div id="projectModal"
-        class="fixed inset-0 z-[60] bg-black/60 backdrop-blur-sm flex items-center justify-center p-4 hidden">
-        <div
-            class="bg-white dark:bg-[#1a1f26] w-full max-w-2xl rounded-xl shadow-2xl overflow-hidden animate-fade-in relative">
-            <button id="modalClose"
-                class="absolute top-4 right-4 p-2 rounded-full bg-black/10 dark:bg-white/10 hover:bg-black/20 dark:hover:bg-white/20 transition-colors">
-                <svg class="w-6 h-6 text-[#1a1a1a] dark:text-white" fill="none" stroke="currentColor"
-                    viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-                </svg>
-            </button>
-            <div class="p-6 md:p-8 flex flex-col md:flex-row gap-8">
-                <img id="modalImage" src="" alt="Project Image"
-                    class="w-full md:w-1/2 h-48 md:h-auto object-cover rounded-lg bg-gray-100 dark:bg-gray-800">
-                <div class="flex flex-col gap-4 flex-1">
-                    <h3 id="modalTitle" class="text-2xl font-serif font-bold text-[#1a1a1a] dark:text-white"></h3>
-                    <p id="modalDesc" class="text-[#4a4a4a] dark:text-[#b0b0b0] text-sm leading-relaxed"></p>
+        class="fixed inset-0 bg-black/60 hidden items-center justify-center z-50 p-4">
+        <div class="bg-white dark:bg-[#1a1f26] max-w-2xl w-full rounded-xl relative">
+            <button id="modalClose" class="absolute top-4 right-4">✕</button>
+
+            <div class="p-6 grid md:grid-cols-2 gap-6">
+                <img id="modalImage" class="rounded-lg object-cover w-full h-48">
+                <div>
+                    <h3 id="modalTitle" class="text-2xl font-bold mb-3"></h3>
+                    <p id="modalDesc" class="text-sm text-gray-500 dark:text-gray-400 mb-4"></p>
                     <div id="modalTags" class="flex flex-wrap gap-2"></div>
                 </div>
             </div>
-            <div
-                class="p-6 bg-gray-50 dark:bg-[#0f1419] flex flex-col sm:flex-row gap-4 border-t border-[#1a1a1a]/10 dark:border-white/10">
-                <a id="modalGithub" href="#" target="_blank"
-                    class="flex-1 px-4 py-3 bg-[#1a1a1a] dark:bg-white text-white dark:text-[#1a1a1a] rounded-lg font-medium text-center hover:opacity-90 transition-opacity flex items-center justify-center gap-2">
-                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                        <path fill-rule="evenodd"
-                            d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
-                            clip-rule="evenodd" />
-                    </svg>
-                    GitHub
-                </a>
-                <a id="modalWebsite" href="#" target="_blank"
-                    class="flex-1 px-4 py-3 border border-[#1a1a1a] dark:border-white text-[#1a1a1a] dark:text-white rounded-lg font-medium text-center hover:bg-[#1a1a1a]/5 dark:hover:bg-white/5 transition-colors flex items-center justify-center gap-2">
-                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                    </svg>
-                    Live Demo
-                </a>
+
+            <div class="flex gap-4 p-6 border-t">
+                <a id="modalGithub" target="_blank"
+                    class="flex-1 bg-black text-white py-2 rounded text-center">GitHub</a>
+                <a id="modalWebsite" target="_blank"
+                    class="flex-1 border py-2 rounded text-center">Live Demo</a>
             </div>
         </div>
     </div>
 
+    <!-- SCRIPT -->
+    <script>
+        const modal = document.getElementById("projectModal");
+        const modalTitle = document.getElementById("modalTitle");
+        const modalDesc = document.getElementById("modalDesc");
+        const modalTags = document.getElementById("modalTags");
+        const modalImage = document.getElementById("modalImage");
+        const modalGithub = document.getElementById("modalGithub");
+        const modalWebsite = document.getElementById("modalWebsite");
+        const modalClose = document.getElementById("modalClose");
+
+        document.querySelectorAll(".open-modal-btn").forEach(btn => {
+            btn.addEventListener("click", () => {
+                const card = btn.closest(".project-card");
+                modalTitle.textContent = card.dataset.title;
+                modalDesc.textContent = card.dataset.desc;
+                modalImage.src = card.dataset.image;
+
+                modalTags.innerHTML = "";
+                JSON.parse(card.dataset.tags).forEach(tag => {
+                    const span = document.createElement("span");
+                    span.className = "px-3 py-1 bg-gray-200 dark:bg-gray-700 rounded-full text-xs";
+                    span.textContent = tag;
+                    modalTags.appendChild(span);
+                });
+
+                modalGithub.href = card.dataset.github;
+                modalWebsite.href = card.dataset.website;
+
+                modal.classList.remove("hidden");
+                modal.classList.add("flex");
+            });
+        });
+
+        modalClose.onclick = () => {
+            modal.classList.add("hidden");
+            modal.classList.remove("flex");
+        };
+
+        modal.onclick = e => {
+            if (e.target === modal) modalClose.click();
+        };
+    </script>
+
 </body>
-
 </html>
-
-<script>
-    // Project Modal Logic
-    const projectModal = document.getElementById('projectModal');
-    const modalClose = document.getElementById('modalClose');
-    const modalTitle = document.getElementById('modalTitle');
-    const modalDesc = document.getElementById('modalDesc');
-    const modalTags = document.getElementById('modalTags');
-    const modalImage = document.getElementById('modalImage');
-    const modalGithub = document.getElementById('modalGithub');
-    const modalWebsite = document.getElementById('modalWebsite');
-
-    function openModal(card) {
-        const title = card.getAttribute('data-title');
-        const desc = card.getAttribute('data-desc');
-        const tags = JSON.parse(card.getAttribute('data-tags') || '[]');
-        const image = card.getAttribute('data-image');
-        const github = card.getAttribute('data-github');
-        const website = card.getAttribute('data-website');
-
-        modalTitle.textContent = title;
-        modalDesc.textContent = desc;
-        modalImage.src = image;
-
-        // Populate Tags
-        modalTags.innerHTML = '';
-        tags.forEach(tag => {
-            const span = document.createElement('span');
-            span.className = 'px-3 py-1 bg-[#f0f0f0] dark:bg-[#252a31] text-[#666] dark:text-[#999] rounded-full text-xs';
-            span.textContent = tag;
-            modalTags.appendChild(span);
-        });
-
-        // Setup Links
-        if (github && github !== '#') {
-            modalGithub.href = github;
-            modalGithub.style.display = 'flex';
-        } else {
-            modalGithub.style.display = 'none';
-        }
-
-        if (website && website !== '#') {
-            modalWebsite.href = website;
-            modalWebsite.style.display = 'flex';
-        } else {
-            modalWebsite.style.display = 'none';
-        }
-
-        projectModal.classList.remove('hidden');
-        document.body.style.overflow = 'hidden'; // Prevent scrolling
-    }
-
-    function closeModal() {
-        projectModal.classList.add('hidden');
-        document.body.style.overflow = ''; // Restore scrolling
-    }
-
-    // Event Listeners for Open Buttons
-    document.querySelectorAll('.open-modal-btn').forEach(btn => {
-        btn.addEventListener('click', (e) => {
-            e.stopPropagation(); // Prevent card click if necessary
-            const card = btn.closest('.project-card');
-            openModal(card);
-        });
-    });
-
-    // Close Modal Events
-    modalClose.addEventListener('click', closeModal);
-    projectModal.addEventListener('click', (e) => {
-        if (e.target === projectModal) {
-            closeModal();
-        }
-    });
-
-    // Close on Escape Key
-    document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape' && !projectModal.classList.contains('hidden')) {
-            closeModal();
-        }
-    });
-</script>
