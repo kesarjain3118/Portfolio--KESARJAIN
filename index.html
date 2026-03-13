@@ -1241,6 +1241,7 @@
                         </div>
                     </div>
                 </div>
+            </div>
         </section>
 
 
@@ -1309,7 +1310,6 @@
             <div class="flex items-center justify-center md:justify-end">
                 <p class="text-[#6a6a6a] dark:text-[#808080]">Built with passion & code</p>
             </div>
-        </div>
         </div>
     </footer>
 
@@ -1455,87 +1455,87 @@
         </div>
     </div>
 
+    <script>
+        // Project Modal Logic
+        const projectModal = document.getElementById('projectModal');
+        const modalClose = document.getElementById('modalClose');
+        const modalTitle = document.getElementById('modalTitle');
+        const modalDesc = document.getElementById('modalDesc');
+        const modalTags = document.getElementById('modalTags');
+        const modalImage = document.getElementById('modalImage');
+        const modalGithub = document.getElementById('modalGithub');
+        const modalWebsite = document.getElementById('modalWebsite');
+
+        function openModal(card) {
+            const title = card.getAttribute('data-title');
+            const desc = card.getAttribute('data-desc');
+            const tags = JSON.parse(card.getAttribute('data-tags') || '[]');
+            const image = card.getAttribute('data-image');
+            const github = card.getAttribute('data-github');
+            const website = card.getAttribute('data-website');
+
+            modalTitle.textContent = title;
+            modalDesc.textContent = desc;
+            modalImage.src = image;
+
+            // Populate Tags
+            modalTags.innerHTML = '';
+            tags.forEach(tag => {
+                const span = document.createElement('span');
+                span.className = 'px-3 py-1 bg-[#f0f0f0] dark:bg-[#252a31] text-[#666] dark:text-[#999] rounded-full text-xs';
+                span.textContent = tag;
+                modalTags.appendChild(span);
+            });
+
+            // Setup Links
+            if (github && github !== '#') {
+                modalGithub.href = github;
+                modalGithub.style.display = 'flex';
+            } else {
+                modalGithub.style.display = 'none';
+            }
+
+            if (website && website !== '#') {
+                modalWebsite.href = website;
+                modalWebsite.style.display = 'flex';
+            } else {
+                modalWebsite.style.display = 'none';
+            }
+
+            projectModal.classList.remove('hidden');
+            document.body.style.overflow = 'hidden'; // Prevent scrolling
+        }
+
+        function closeModal() {
+            projectModal.classList.add('hidden');
+            document.body.style.overflow = ''; // Restore scrolling
+        }
+
+        // Event Listeners for Open Buttons
+        document.querySelectorAll('.open-modal-btn').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                e.stopPropagation(); // Prevent card click if necessary
+                const card = btn.closest('.project-card');
+                openModal(card);
+            });
+        });
+
+        // Close Modal Events
+        modalClose.addEventListener('click', closeModal);
+        projectModal.addEventListener('click', (e) => {
+            if (e.target === projectModal) {
+                closeModal();
+            }
+        });
+
+        // Close on Escape Key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && !projectModal.classList.contains('hidden')) {
+                closeModal();
+            }
+        });
+    </script>
+
 </body>
 
 </html>
-
-<script>
-    // Project Modal Logic
-    const projectModal = document.getElementById('projectModal');
-    const modalClose = document.getElementById('modalClose');
-    const modalTitle = document.getElementById('modalTitle');
-    const modalDesc = document.getElementById('modalDesc');
-    const modalTags = document.getElementById('modalTags');
-    const modalImage = document.getElementById('modalImage');
-    const modalGithub = document.getElementById('modalGithub');
-    const modalWebsite = document.getElementById('modalWebsite');
-
-    function openModal(card) {
-        const title = card.getAttribute('data-title');
-        const desc = card.getAttribute('data-desc');
-        const tags = JSON.parse(card.getAttribute('data-tags') || '[]');
-        const image = card.getAttribute('data-image');
-        const github = card.getAttribute('data-github');
-        const website = card.getAttribute('data-website');
-
-        modalTitle.textContent = title;
-        modalDesc.textContent = desc;
-        modalImage.src = image;
-
-        // Populate Tags
-        modalTags.innerHTML = '';
-        tags.forEach(tag => {
-            const span = document.createElement('span');
-            span.className = 'px-3 py-1 bg-[#f0f0f0] dark:bg-[#252a31] text-[#666] dark:text-[#999] rounded-full text-xs';
-            span.textContent = tag;
-            modalTags.appendChild(span);
-        });
-
-        // Setup Links
-        if (github && github !== '#') {
-            modalGithub.href = github;
-            modalGithub.style.display = 'flex';
-        } else {
-            modalGithub.style.display = 'none';
-        }
-
-        if (website && website !== '#') {
-            modalWebsite.href = website;
-            modalWebsite.style.display = 'flex';
-        } else {
-            modalWebsite.style.display = 'none';
-        }
-
-        projectModal.classList.remove('hidden');
-        document.body.style.overflow = 'hidden'; // Prevent scrolling
-    }
-
-    function closeModal() {
-        projectModal.classList.add('hidden');
-        document.body.style.overflow = ''; // Restore scrolling
-    }
-
-    // Event Listeners for Open Buttons
-    document.querySelectorAll('.open-modal-btn').forEach(btn => {
-        btn.addEventListener('click', (e) => {
-            e.stopPropagation(); // Prevent card click if necessary
-            const card = btn.closest('.project-card');
-            openModal(card);
-        });
-    });
-
-    // Close Modal Events
-    modalClose.addEventListener('click', closeModal);
-    projectModal.addEventListener('click', (e) => {
-        if (e.target === projectModal) {
-            closeModal();
-        }
-    });
-
-    // Close on Escape Key
-    document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape' && !projectModal.classList.contains('hidden')) {
-            closeModal();
-        }
-    });
-</script>
